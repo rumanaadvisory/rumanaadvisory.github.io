@@ -42,8 +42,7 @@
     display: grid;
     grid-template-columns: 1fr 180px;
     gap: 40px;
-   // align-items: center;
-    align-items: stretch;    /* was: center */
+    align-items: center;
   }
 
   .header-text .eyebrow {
@@ -97,20 +96,14 @@
     position: relative;
   }
 
- // .header-photo img {
- //   width: 100%;
- //   aspect-ratio: 1/1;
- //   object-fit: cover;
- //   object-position: center top;
- //   border-radius: 4px;
- //   display: block;
-   .header-photo img {
+ .header-photo img {
     width: 100%;
-    height: 100%;          /* fills text column height */
+    aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center top;
+    border-radius: 4px;
     display: block;
-  }
+   }
 
   .photo-placeholder {
     width: 100%;
