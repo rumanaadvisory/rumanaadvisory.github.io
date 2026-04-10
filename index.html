@@ -1,27 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rumana Hussain – Fractional COO Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --navy: #1C2B3A;
-    --slate: #2E4A62;
-    --teal: #3D7A6F;
-    --warm: #C4906A;
-    --cream: #FAF7F2;
-    --light: #F0EBE3;
-    --mid: #8A9BAD;
-    --text: #2A2A2A;
-    --muted: #6B7A8A;
+    --navy:       #0C132F;
+    --teal:       #115156;
+    --teal-mid:   #1a6e74;
+    --teal-light: #1f8088;
+    --warm:       #C4613A;
+    --cream:      #F5F1EC;
+    --light:      #EDE8E1;
+    --mid:        #96816E;
+    --text:       #2A2A2A;
+    --muted:      #7a6a5e;
   }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     background: var(--cream);
     color: var(--text);
     min-height: 100vh;
@@ -29,65 +31,42 @@
 
   /* ── HEADER ── */
   header {
-    background: var(--navy);
-    padding: 32px 48px 28px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  header::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 320px; height: 320px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(61,122,111,0.18) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  header::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; left: 30%;
-    width: 200px; height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(196,144,106,0.12) 0%, transparent 70%);
-    pointer-events: none;
+    background: var(--cream);
+    border-bottom: 3px solid var(--warm);
   }
 
   .header-inner {
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
+    padding: 36px 48px 32px;
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 40px;
+    align-items: center;
   }
 
-  .eyebrow {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 3px;
+  .header-text .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
     text-transform: uppercase;
-    color: var(--cream);
-    margin-bottom: 14px;
+    color: var(--mid);
+    margin-bottom: 12px;
   }
 
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    font-weight: 600;
-    color: #FFFFFF;
-    line-height: 1.15;
-    margin-bottom: 10px;
+  .header-text h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 8px;
   }
 
-  .subtitle {
-    font-family: 'DM Sans', sans-serif;
-    font-style: normal;
+  .header-text .tagline {
     font-size: 15px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 24px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 20px;
     line-height: 1.5;
   }
 
@@ -96,41 +75,123 @@
     gap: 8px;
     flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 6px;
   }
 
   .pedigree-item {
     font-size: 12px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.5px;
+    font-weight: 400;
+    color: var(--muted);
   }
 
   .pedigree-dot {
     width: 3px; height: 3px;
     border-radius: 50%;
     background: var(--teal);
-    opacity: 0.6;
-  }
-  
-  .pedigree-mobile {
-  display: none;
+    opacity: 0.7;
+    flex-shrink: 0;
   }
 
-@media (max-width: 768px) {
-  .pedigree-desktop {
-    display: none !important;
+  .header-photo {
+    position: relative;
   }
-  
-  .pedigree-mobile {
+
+  .header-photo img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 4px;
+    display: block;
+  }
+
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--light);
+    border-radius: 4px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px dashed var(--mid);
   }
-}
+
+  .photo-placeholder span {
+    font-size: 11px;
+    color: var(--mid);
+    text-align: center;
+    padding: 16px;
+    line-height: 1.6;
+  }
+
+  .pedigree-mobile { display: none; }
+
+  @media (max-width: 768px) {
+    .header-inner {
+      grid-template-columns: 1fr;
+      padding: 24px 20px;
+      gap: 24px;
+    }
+    .header-photo { max-width: 180px; }
+    .header-photo img { aspect-ratio: 1/1; }
+    .photo-placeholder { aspect-ratio: 1/1; max-width: 180px; }
+    .pedigree-desktop { display: none !important; }
+    .pedigree-mobile { display: flex; }
+  }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial-bar {
+    background: var(--navy);
+    padding: 18px 48px;
+  }
+
+  .testimonial-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+
+  .quote-mark {
+    font-size: 48px;
+    color: var(--teal);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: -4px;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .testimonial-text {
+    font-size: 13.5px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.6;
+  }
+
+  .testimonial-attr {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--warm);
+    margin-top: 6px;
+    font-style: normal;
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-bar { padding: 18px 20px; }
+  }
 
   /* ── MAIN ── */
   main {
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 28px 48px 32px;
+  }
+
+  @media (max-width: 768px) {
+    main { padding: 24px 20px; }
   }
 
   /* ── USE CASES BANNER ── */
@@ -150,17 +211,17 @@
   }
 
   .use-cases strong {
-    color: var(--slate);
-    font-weight: 500;
+    color: var(--navy);
+    font-weight: 700;
   }
 
   /* ── SECTION LABEL ── */
   .section-label {
-    font-size: 11.5px;
-    font-weight: 500;
+    font-size: 10.5px;
+    font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--teal);
+    color: var(--warm);
     margin-bottom: 18px;
   }
 
@@ -169,57 +230,51 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 
   .card {
     background: #FFFFFF;
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1px solid rgba(0,0,0,0.07);
     overflow: hidden;
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 210px 1fr;
     transition: box-shadow 0.2s ease;
   }
 
-  .card:hover {
-    box-shadow: 0 8px 32px rgba(28,43,58,0.09);
-  }
+  .card:hover { box-shadow: 0 6px 24px rgba(12,19,47,0.08); }
 
   .card-left {
-    background: var(--navy);
-    padding: 18px 18px;
+    background: var(--teal);
+    padding: 20px 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  .card-left.teal { background: var(--teal); }
-  .card-left.slate { background: var(--slate); }
-  .card-left.warm-bg { background: #5A3E2B; }
+  .card-left.teal-mid  { background: var(--teal-mid); }
+  .card-left.teal-light { background: var(--teal-light); }
 
   .card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 19px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     color: #FFFFFF;
     line-height: 1.3;
     margin-bottom: 10px;
   }
 
   .card-tagline {
-    font-size: 13.5px;
-    color: rgba(255,255,255,0.55);
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.65);
     line-height: 1.55;
-    'font-style: italic;
+    font-style: italic;
   }
 
-  .card-price {
-    margin-top: 24px;
-  }
+  .card-price { margin-top: 24px; }
 
   .price-label {
-    font-size: 10px;
+    font-size: 9.5px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255,255,255,0.4);
@@ -227,158 +282,88 @@
   }
 
   .price-value {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 700;
     color: #FFFFFF;
     line-height: 1.2;
   }
 
   .price-note {
     font-size: 11px;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.5);
     margin-top: 3px;
   }
 
-  .card-right {
-    padding: 18px 20px 16px;
-  }
+  .card-right { padding: 18px 22px 16px; }
 
   .best-when {
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 10px;
+    font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--warm);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .best-when-text {
-    font-size: 13.5px;
+    font-size: 13px;
     color: var(--muted);
     line-height: 1.6;
-    margin-bottom: 18px;
-    'font-style: italic;
+    margin-bottom: 16px;
+    font-style: italic;
   }
 
   .what-label {
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 10px;
+    font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--slate);
-    margin-bottom: 12px;
+    color: var(--navy);
+    margin-bottom: 10px;
   }
 
   .deliverables {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 4px;
   }
 
   .deliverables li {
-    font-size: 13.5px;
+    font-size: 13px;
     color: var(--text);
-    line-height: 1.45;
-    padding-left: 18px;
+    line-height: 1.5;
+    padding-left: 16px;
     position: relative;
   }
 
   .deliverables li::before {
-    content: '→';
+    content: '–';
     position: absolute;
     left: 0;
-    color: var(--teal);
-    font-size: 13.5px;
-    top: 1px;
+    color: var(--warm);
+    top: 0;
   }
 
   .card-footer {
-    margin-top: 16px;
-    padding-top: 14px;
+    margin-top: 14px;
+    padding-top: 12px;
     border-top: 1px solid var(--light);
-    font-size: 13.5px;
-    color: var(--muted);
-  }
-
-  /* ── PROOF ── */
-  .proof {
-    background: var(--navy);
-    border-radius: 10px;
-    padding: 16px 24px;
-    margin-bottom: 24px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .proof::before {
-    content: '\201C';
-    position: absolute;
-    top: -10px; left: 24px;
-    font-family: 'Playfair Display', serif;
-    font-size: 140px;
-    color: rgba(61,122,111,0.15);
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .proof-text {
-    //font-family: 'Playfair Display', serif;
-    font-style: italic;
     font-size: 12.5px;
-    color: rgba(255,255,255,0.88);
-    line-height: 1.5;
-    margin-bottom: 10px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .proof-attr {
-    font-size: 13.5px;
-    color: var(--teal);
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ── BACKGROUND ── */
-  .background {
-    margin-bottom: 32px;
-  }
-
-  .bg-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    margin-top: 0;
-  }
-
-  .bg-item {
-    background: #FFFFFF;
-    border: 1px solid rgba(0,0,0,0.07);
-    border-radius: 10px;
-    padding: 16px 18px 14px;
-  }
-
-  .bg-org {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 4px;
-  }
-
-  .bg-role {
-    font-size: 12px;
     color: var(--muted);
-    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .card { grid-template-columns: 1fr; }
+    .card-left { padding: 20px; }
+    .card-right { padding: 20px; }
   }
 
   /* ── CTA ── */
   .cta {
     background: var(--light);
     border-radius: 8px;
-    padding: 16px 24px;
+    padding: 24px 28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -386,37 +371,50 @@
   }
 
   .cta-left h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--navy);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
 
   .cta-left p {
     font-size: 13.5px;
     color: var(--muted);
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
   .cta-right {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: flex-start;
+    align-items: stretch;
+    min-width: 200px;
+    flex-shrink: 0;
   }
 
   .cta-link {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 11px;
-    color: var(--slate);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
     text-decoration: none;
-    font-weight: 500;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.08);
+    transition: all 0.2s ease;
+    white-space: nowrap;
   }
 
-  .cta-link:hover { color: var(--teal); }
+  .cta-link:hover {
+    background: var(--teal);
+    color: white;
+    border-color: var(--teal);
+  }
+
+  .cta-link:hover .cta-icon { background: rgba(255,255,255,0.15); }
 
   .cta-icon {
     width: 28px; height: 28px;
@@ -426,165 +424,46 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: background 0.2s ease;
   }
 
   .cta-icon svg { width: 12px; height: 12px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
+  @media (max-width: 768px) {
+    .cta { flex-direction: column; padding: 20px; }
+    .cta-right { min-width: unset; width: 100%; }
+  }
+
   /* ── FOOTER ── */
   footer {
-    border-top: 1px solid rgba(0,0,0,0.08);
-    padding: 18px 48px;
-    max-width: 860px;
-    margin: 0 auto;
+    background: var(--navy);
+    padding: 16px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   .footer-name {
-    font-size: 30px;
-    font-weight: 500;
-    color: var(--navy);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--mid);
   }
 
   .footer-note {
-    font-size: 11px;
-    color: var(--muted);
+    font-size: 12px;
+    color: var(--warm);
+  }
+
+  @media (max-width: 768px) {
+    footer { flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px; }
   }
 
   @media print {
     body { background: white; }
-    .card:hover { box-shadow: none; }
-    
-    /* Force colors in print */
-    * {
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
-      color-adjust: exact !important;
-    }
-    
-    @page {
-      margin: 0.4in;
-      size: letter portrait;
-    }
-  }
-
-  /* Mobile adjustments */
-  @media (max-width: 768px) {
-    header {
-      padding: 24px 20px;
-    }
-
-    main {
-      padding: 24px 20px;
-    }
-
-    .pedigree {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .pedigree-dot {
-      display: none;
-    }
-
-    .card {
-      grid-template-columns: 1fr;
-    }
-
-    .card-left {
-      padding: 20px;
-    }
-
-    .card-right {
-      padding: 20px;
-    }
-
-    .cta {
-      flex-direction: column;
-      padding: 20px;
-      gap: 20px;
-    }
-
-    footer {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 20px;
-    }
-
-    .footer-name {
-      font-size: 18px;
-    }
-  }
-
-  @media (min-width: 900px) {
-    .cta {
-      padding: 32px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 40px;
-    }
-    
-    .cta-left {
-      flex: 0 0 60%;
-    }
-    
-    .cta-left h3 {
-      font-size: 12px;
-      margin-bottom: 8px;
-    }
-    
-    .cta-left p {
-      font-size: 14px;
-    }
-    
-    .cta-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: stretch;
-      min-width: 200px;
-    }
-    
-    .cta-link {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      padding: 8px 10px;
-      background: white;
-      border-radius: 4px;
-      border: 1px solid rgba(0,0,0,0.08);
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    
-    .cta-link:hover {
-      background: var(--navy);
-      color: white;
-      border-color: var(--navy);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(28,43,58,0.15);
-    }
-    
-    .cta-link:hover .cta-icon {
-      background: var(--teal);
-    }
-    
-    .cta-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-    }
-    
-    .cta-icon svg {
-      width: 14px;
-      height: 14px;
-    }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    @page { margin: 0.4in; size: letter portrait; }
   }
 </style>
 </head>
@@ -592,48 +471,60 @@
 
 <header>
   <div class="header-inner">
-    <div class="eyebrow">Fractional COO Services</div>
-    <h1>Rumana Hussain</h1>
-   <!-- Desktop pedigree - shown on screens 769px+ -->
-<div class="pedigree pedigree-desktop">
-  <span class="pedigree-item">Stanford Health Care</span>
-  <span class="pedigree-dot"></span>
-  <span class="pedigree-item">Blue Shield of California</span>
-  <span class="pedigree-dot"></span>
-  <span class="pedigree-item">Alameda Health System</span>
-  <span class="pedigree-dot"></span>
-  <span class="pedigree-item">Sparrow Healthcare</span>
-</div>
-<div class="pedigree pedigree-desktop" style="margin-top: 8px;">
-  <span class="pedigree-item">MBA/MPH, UC Berkeley</span>
-  <span class="pedigree-dot"></span>
-  <span class="pedigree-item">BS Computer Science, Washington University in St. Louis</span>
-</div>
-
-<!-- Mobile pedigree - shown on screens 768px and below -->
-<div class="pedigree pedigree-mobile">
-  <span class="pedigree-item">Stanford</span>
-  <span class="pedigree-dot"></span>
-  <span class="pedigree-item">Blue Shield</span>
-  <span class="pedigree-dot"></span>
-  <span class="pedigree-item">MBA/MPH, UC Berkeley</span>
-</div>
+    <div class="header-text">
+      <div class="eyebrow">Fractional COO Services</div>
+      <h1>Rumana Hussain</h1>
+      <p class="tagline">Operational leadership for healthcare organizations at an inflection point.</p>
+      <div class="pedigree pedigree-desktop">
+        <span class="pedigree-item">Stanford Health Care</span>
+        <span class="pedigree-dot"></span>
+        <span class="pedigree-item">Blue Shield of California</span>
+        <span class="pedigree-dot"></span>
+        <span class="pedigree-item">Alameda Health System</span>
+        <span class="pedigree-dot"></span>
+        <span class="pedigree-item">Sparrow Healthcare</span>
+      </div>
+      <div class="pedigree pedigree-desktop" style="margin-top:6px;">
+        <span class="pedigree-item">MBA/MPH, UC Berkeley</span>
+        <span class="pedigree-dot"></span>
+        <span class="pedigree-item">BS Computer Science, Washington University in St. Louis</span>
+      </div>
+      <div class="pedigree pedigree-mobile">
+        <span class="pedigree-item">Stanford</span>
+        <span class="pedigree-dot"></span>
+        <span class="pedigree-item">Blue Shield</span>
+        <span class="pedigree-dot"></span>
+        <span class="pedigree-item">MBA/MPH, UC Berkeley</span>
+      </div>
+    </div>
+    <div class="header-photo">
+      <div class="photo-placeholder">
+        <span>Add headshot here — replace this div with an &lt;img&gt; tag pointing to your photo file</span>
+      </div>
+    </div>
   </div>
 </header>
 
+<div class="testimonial-bar">
+  <div class="testimonial-inner">
+    <div class="quote-mark">"</div>
+    <div>
+      <div class="testimonial-text">Rumana advanced our operational maturity 12–18 months ahead of where companies typically are at our stage. She has been a game-changer in our transition to repeatable, scalable operations.</div>
+      <div class="testimonial-attr">— Kunal Sethy, Founder & CEO, Sparrow Healthcare</div>
+    </div>
+  </div>
+</div>
+
 <main>
 
-  <!-- Use cases banner -->
   <div class="use-cases">
     <p>I work with <strong>healthcare organizations at an inflection point</strong> — scaling a care model, building operational infrastructure for the first time, navigating rapid growth, or stabilizing after a period of firefighting. Experience includes early-stage health tech, large established health systems, and public and private payers.</p>
   </div>
 
-  <!-- Offerings -->
   <div class="section-label">How I Work With You</div>
 
   <div class="offerings">
 
-    <!-- Card 1: Fractional COO -->
     <div class="card">
       <div class="card-left">
         <div>
@@ -655,14 +546,13 @@
           <li>Cross-functional workflow optimization and process design</li>
           <li>Workforce development — care teams, CHWs, team lead coaching</li>
           <li>Clinical-product alignment and operational bridge-building</li>
-         </ul>
+        </ul>
         <div class="card-footer">Typical engagement: 3–6 months · 5–20 hrs/week depending on scope</div>
       </div>
     </div>
 
-    <!-- Card 2: Focused Project -->
     <div class="card">
-      <div class="card-left teal">
+      <div class="card-left teal-mid">
         <div>
           <div class="card-title">Focused Operations Project</div>
           <div class="card-tagline">One problem, scoped cleanly, solved completely</div>
@@ -687,9 +577,8 @@
       </div>
     </div>
 
-    <!-- Card 3: Strategic Advisory -->
     <div class="card">
-      <div class="card-left slate">
+      <div class="card-left teal-light">
         <div>
           <div class="card-title">Strategic Advisory Retainer</div>
           <div class="card-tagline">A senior ops brain in your corner — no implementation required</div>
@@ -716,35 +605,20 @@
 
   </div>
 
-  <!-- Proof point -->
-  <div class="proof">
-    <p class="proof-text">"Rumana advanced our operational maturity 12–18 months ahead of where companies typically are at our stage. She has been a game-changer in our transition to repeatable, scalable operations."</p>
-    <div class="proof-attr">— Kunal Sethy, Founder & CEO, Sparrow Healthcare</div>
-  </div>
-
-  <!-- CTA -->
   <div class="cta">
     <div class="cta-left">
       <h3>Let's talk about where you are.</h3>
       <p>A 30-minute discovery call is the best place to start — I'll ask about your current situation and you can ask me anything. No pitch, no pressure.</p>
     </div>
     <div class="cta-right">
-       <a href="mailto:rumana@rumanaadvisory.com" 
-   onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { 
-     event.preventDefault(); 
-     navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => {
-       alert('Email copied to clipboard!');
-     }).catch(() => {
-       alert('Could not copy. Email: rumana@rumanaadvisory.com');
-     }); 
-     return false; 
-   }" 
-   class="cta-link">
-  <div class="cta-icon">
-    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-  </div>
-  Send me an email
-</a>
+      <a href="mailto:rumana@rumanaadvisory.com"
+         onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }"
+         class="cta-link">
+        <div class="cta-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        Send me an email
+      </a>
       <a href="https://tidycal.com/rumana/coo-ops" target="_blank" rel="noopener noreferrer" class="cta-link">
         <div class="cta-icon">
           <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -763,8 +637,8 @@
 </main>
 
 <footer>
-  <span class="footer-name"></span>
-  <span class="footer-note"></span>
+  <span class="footer-name">Rumana Advisory LLC</span>
+  <span class="footer-note">rumanaadvisory.com</span>
 </footer>
 
 </body>
