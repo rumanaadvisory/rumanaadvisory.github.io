@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rumana Hussain – Fractional COO Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -20,413 +20,173 @@
     --mid:        #96816E;
     --text:       #2A2A2A;
     --muted:      #7a6a5e;
+
+    --f-display: 700 38px/1.1 'Lato', sans-serif;
+    --f-label:   700 10px/1 'Lato', sans-serif;
+    --f-body:    400 14px/1.65 'Lato', sans-serif;
+    --f-muted:   300 14px/1.65 'Lato', sans-serif;
   }
 
-  body {
-    font-family: 'Lato', sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    min-height: 100vh;
-  }
+  body { font: var(--f-body); background: var(--cream); color: var(--text); min-height: 100vh; }
+
+  .label { font: var(--f-label); letter-spacing: 3px; text-transform: uppercase; }
+  .muted-text { font: var(--f-muted); font-style: italic; }
 
   /* ── HEADER ── */
-  header {
-    background: var(--cream);
-    border-bottom: 3px solid var(--warm);
-  }
+  header { background: var(--cream); border-bottom: 3px solid var(--warm); }
 
   .header-inner {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 900px; margin: 0 auto;
     padding: 36px 48px 32px;
-    display: grid;
-    grid-template-columns: 1fr 180px;
-    gap: 40px;
-    align-items: center;
+    display: grid; grid-template-columns: 1fr 180px;
+    gap: 40px; align-items: center;
   }
 
-  .header-text .eyebrow {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 3.5px;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-bottom: 12px;
-  }
+  h1 { font: var(--f-display); color: var(--navy); margin-bottom: 8px; }
 
-  .header-text h1 {
-    font-size: 40px;
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1.1;
-    margin-bottom: 8px;
-  }
+  .eyebrow { color: var(--mid); margin-bottom: 12px; }
 
-  .header-text .tagline {
-    font-size: 15px;
-    font-weight: 300;
-    color: var(--muted);
-    margin-bottom: 20px;
-    line-height: 1.5;
-  }
+  .tagline { font: var(--f-muted); font-style: italic; color: var(--muted); margin-bottom: 20px; }
 
-  .pedigree {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 6px;
-  }
+  .pedigree { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 6px; color: var(--muted); }
 
-  .pedigree-item {
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--muted);
-  }
+  .pedigree-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--teal); opacity: 0.7; flex-shrink: 0; }
 
-  .pedigree-dot {
-    width: 3px; height: 3px;
-    border-radius: 50%;
-    background: var(--teal);
-    opacity: 0.7;
-    flex-shrink: 0;
-  }
-
-  .header-photo {
-    position: relative;
-  }
-
- .header-photo img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 4px;
-    display: block;
-   }
-
-  .photo-placeholder {
-    width: 100%;
-    aspect-ratio: 3/4;
-    background: var(--light);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1.5px dashed var(--mid);
-  }
-
-  .photo-placeholder span {
-    font-size: 11px;
-    color: var(--mid);
-    text-align: center;
-    padding: 16px;
-    line-height: 1.6;
+  .header-photo img {
+    width: 100%; aspect-ratio: 1/1;
+    object-fit: cover; object-position: center top;
+    border-radius: 4px; display: block;
   }
 
   .pedigree-mobile { display: none; }
 
   @media (max-width: 768px) {
-    .header-inner {
-      grid-template-columns: 1fr;
-      padding: 24px 20px;
-      gap: 24px;
-     
-    }
+    .header-inner { grid-template-columns: 1fr; padding: 24px 20px; gap: 24px; }
     .header-photo { max-width: 180px; }
-    .header-photo img { aspect-ratio: 1/1; }
-    .photo-placeholder { aspect-ratio: 1/1; max-width: 180px; }
     .pedigree-desktop { display: none !important; }
     .pedigree-mobile { display: flex; }
   }
 
   /* ── TESTIMONIAL ── */
-  .testimonial-bar {
-    background: var(--navy);
-    padding: 18px 48px;
-  }
+  .testimonial-bar { background: var(--navy); padding: 18px 0; }
 
   .testimonial-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    align-items: baseline;
-    gap: 20px
+    max-width: 900px; margin: 0 auto;
     padding: 0 48px;
   }
 
-  .quote-mark {
-    font-size: 48px;
-    color: var(--teal-light);
-    line-height: 1;
-    flex-shrink: 0;
-    margin-top: -4px;
-    font-style: italic;
-    font-weight: 300;
-  }
+  .testimonial-text { font: var(--f-muted); font-style: italic; color: rgba(255,255,255,0.88); }
 
-  .testimonial-text {
-    font-size: 13.5px;
-    font-style: italic;
-    font-weight: 300;
-    color: rgba(255,255,255,0.88);
-    line-height: 1.6;
-  }
+  .testimonial-attr { font: var(--f-label); letter-spacing: 0; text-transform: none; color: var(--warm); margin-top: 8px; }
 
-  .testimonial-attr {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--warm);
-    margin-top: 6px;
-    font-style: normal;
-  }
-
-  @media (max-width: 768px) {
-    .testimonial-bar { padding: 18px 20px; }
-  }
+  @media (max-width: 768px) { .testimonial-inner { padding: 0 20px; } }
 
   /* ── MAIN ── */
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 28px 48px 32px;
-  }
+  main { max-width: 900px; margin: 0 auto; padding: 28px 48px 32px; }
 
-  @media (max-width: 768px) {
-    main { padding: 24px 20px; }
-  }
+  @media (max-width: 768px) { main { padding: 24px 20px; } }
 
   /* ── USE CASES BANNER ── */
   .use-cases {
-    background: var(--light);
-    border-left: 3px solid var(--teal);
-    border-radius: 0 8px 8px 0;
-    padding: 14px 20px;
-    margin-bottom: 32px;
-  }
-
-  .use-cases p {
-    font-size: 13.5px;
-    font-weight: 400;
+    background: var(--light); border-left: 3px solid var(--teal);
+    border-radius: 0 8px 8px 0; padding: 14px 20px; margin-bottom: 32px;
     color: var(--muted);
-    line-height: 1.65;
   }
 
-  .use-cases strong {
-    color: var(--navy);
-    font-weight: 700;
-  }
+  .use-cases strong { color: var(--navy); font-weight: 700; }
 
   /* ── SECTION LABEL ── */
-  .section-label {
-    font-size: 10.5px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--warm);
-    margin-bottom: 18px;
-  }
+  .section-label { color: var(--warm); margin-bottom: 18px; }
 
   /* ── OFFERING CARDS ── */
-  .offerings {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
+  .offerings { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
 
   .card {
-    background: #FFFFFF;
-    border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.07);
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 210px 1fr;
+    background: #fff; border-radius: 10px; border: 1px solid rgba(0,0,0,0.07);
+    overflow: hidden; display: grid; grid-template-columns: 210px 1fr;
     transition: box-shadow 0.2s ease;
   }
 
   .card:hover { box-shadow: 0 6px 24px rgba(12,19,47,0.08); }
 
   .card-left {
-    background: var(--teal);
-    padding: 20px 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background: var(--teal); padding: 20px 18px;
+    display: flex; flex-direction: column; justify-content: space-between;
   }
 
-  .card-left.teal-mid  { background: var(--teal-mid); }
+  .card-left.teal-mid   { background: var(--teal-mid); }
   .card-left.teal-light { background: var(--teal-light); }
 
-  .card-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #FFFFFF;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
+  .card-title { font: var(--f-display); font-size: 16px; color: #fff; margin-bottom: 8px; }
 
-  .card-tagline {
-    font-size: 12.5px;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.55;
-    font-style: italic;
-  }
+  .card-tagline { font: var(--f-muted); font-style: italic; color: rgba(255,255,255,0.65); }
 
   .card-price { margin-top: 24px; }
 
-  .price-label {
-    font-size: 9.5px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 4px;
-  }
+  .price-label { color: rgba(255,255,255,0.45); margin-bottom: 4px; }
 
-  .price-value {
-    font-size: 16px;
-    font-weight: 700;
-    color: #FFFFFF;
-    line-height: 1.2;
-  }
+  .price-value { font: var(--f-display); font-size: 14px; color: #fff; }
 
-  .price-note {
-    font-size: 11px;
-    color: rgba(255,255,255,0.5);
-    margin-top: 3px;
-  }
+  .price-note { font: var(--f-muted); font-style: normal; color: rgba(255,255,255,0.5); margin-top: 2px; }
 
   .card-right { padding: 18px 22px 16px; }
 
-  .best-when {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--warm);
-    margin-bottom: 8px;
-  }
+  .best-when { color: var(--warm); margin-bottom: 8px; }
 
-  .best-when-text {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 16px;
-    font-style: italic;
-  }
+  .best-when-text { font: var(--f-muted); font-style: italic; color: var(--muted); margin-bottom: 16px; }
 
-  .what-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 10px;
-  }
+  .what-label { color: var(--navy); margin-bottom: 10px; }
 
-  .deliverables {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
+  .deliverables { list-style: none; display: flex; flex-direction: column; gap: 4px; }
 
-  .deliverables li {
-    font-size: 13px;
-    color: var(--text);
-    line-height: 1.5;
-    padding-left: 16px;
-    position: relative;
-  }
+  .deliverables li { padding-left: 16px; position: relative; color: var(--text); }
 
-  .deliverables li::before {
-    content: '–';
-    position: absolute;
-    left: 0;
-    color: var(--warm);
-    top: 0;
-  }
+  .deliverables li::before { content: '–'; position: absolute; left: 0; color: var(--warm); }
 
   .card-footer {
-    margin-top: 14px;
-    padding-top: 12px;
+    margin-top: 14px; padding-top: 12px;
     border-top: 1px solid var(--light);
-    font-size: 12.5px;
-    color: var(--muted);
+    font: var(--f-muted); font-style: normal; color: var(--muted);
   }
 
   @media (max-width: 768px) {
     .card { grid-template-columns: 1fr; }
-    .card-left { padding: 20px; }
-    .card-right { padding: 20px; }
+    .card-left, .card-right { padding: 20px; }
   }
 
   /* ── CTA ── */
   .cta {
-    background: var(--light);
-    border-radius: 8px;
-    padding: 24px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
+    background: var(--light); border-radius: 8px;
+    padding: 24px 28px; display: flex;
+    justify-content: space-between; align-items: center; gap: 24px;
   }
 
-  .cta-left h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
+  .cta-left h3 { font: var(--f-display); font-size: 16px; color: var(--navy); margin-bottom: 6px; }
 
-  .cta-left p {
-    font-size: 13.5px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+  .cta-left p { color: var(--muted); }
 
   .cta-right {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: stretch;
-    min-width: 200px;
-    flex-shrink: 0;
+    display: flex; flex-direction: column; gap: 10px;
+    align-items: stretch; min-width: 200px; flex-shrink: 0;
   }
 
   .cta-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--navy);
-    text-decoration: none;
-    padding: 8px 12px;
-    background: white;
-    border-radius: 6px;
-    border: 1px solid rgba(0,0,0,0.08);
-    transition: all 0.2s ease;
-    white-space: nowrap;
+    display: flex; align-items: center; gap: 8px;
+    font: var(--f-body); font-weight: 700;
+    color: var(--navy); text-decoration: none;
+    padding: 8px 12px; background: white;
+    border-radius: 6px; border: 1px solid rgba(0,0,0,0.08);
+    transition: all 0.2s ease; white-space: nowrap;
   }
 
-  .cta-link:hover {
-    background: var(--teal);
-    color: white;
-    border-color: var(--teal);
-  }
-
+  .cta-link:hover { background: var(--teal); color: white; border-color: var(--teal); }
   .cta-link:hover .cta-icon { background: rgba(255,255,255,0.15); }
 
   .cta-icon {
-    width: 28px; height: 28px;
-    border-radius: 6px;
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: background 0.2s ease;
+    width: 28px; height: 28px; border-radius: 6px;
+    background: var(--navy); display: flex;
+    align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.2s ease;
   }
 
   .cta-icon svg { width: 12px; height: 12px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -438,25 +198,12 @@
 
   /* ── FOOTER ── */
   footer {
-    background: var(--navy);
-    padding: 16px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: var(--navy); padding: 16px 48px;
+    display: flex; justify-content: space-between; align-items: center;
   }
 
-  .footer-name {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--mid);
-  }
-
-  .footer-note {
-    font-size: 12px;
-    color: var(--warm);
-  }
+  .footer-name { color: var(--mid); }
+  .footer-note { color: var(--warm); }
 
   @media (max-width: 768px) {
     footer { flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px; }
@@ -474,42 +221,34 @@
 <header>
   <div class="header-inner">
     <div class="header-text">
-      <div class="eyebrow">Fractional COO Services</div>
+      <div class="eyebrow label">Fractional COO Services</div>
       <h1>Rumana Hussain</h1>
       <p class="tagline">Operational leadership for healthcare organizations at an inflection point.</p>
       <div class="pedigree pedigree-desktop">
-        <span class="pedigree-item">Stanford Health Care</span>
-        <span class="pedigree-dot"></span>
-        <span class="pedigree-item">Blue Shield of California</span>
-        <span class="pedigree-dot"></span>
-        <span class="pedigree-item">Alameda Health System</span>
+        <span>Stanford Health Care</span><span class="pedigree-dot"></span>
+        <span>Blue Shield of California</span><span class="pedigree-dot"></span>
+        <span>Alameda Health System</span>
       </div>
       <div class="pedigree pedigree-desktop" style="margin-top:6px;">
-        <span class="pedigree-item">MBA/MPH, UC Berkeley</span>
-        <span class="pedigree-dot"></span>
-        <span class="pedigree-item">BS Computer Science, Washington University in St. Louis</span>
+        <span>MBA/MPH, UC Berkeley</span><span class="pedigree-dot"></span>
+        <span>BS Computer Science, Washington University in St. Louis</span>
       </div>
       <div class="pedigree pedigree-mobile">
-        <span class="pedigree-item">Stanford</span>
-        <span class="pedigree-dot"></span>
-        <span class="pedigree-item">Blue Shield</span>
-        <span class="pedigree-dot"></span>
-        <span class="pedigree-item">MBA/MPH, UC Berkeley</span>
+        <span>Stanford</span><span class="pedigree-dot"></span>
+        <span>Blue Shield</span><span class="pedigree-dot"></span>
+        <span>MBA/MPH, UC Berkeley</span>
       </div>
     </div>
     <div class="header-photo">
-       <span><img src="headshot.png" alt="Rumana Hussain"></span>
-     </div>
+      <img src="headshot.png" alt="Rumana Hussain">
+    </div>
   </div>
 </header>
 
 <div class="testimonial-bar">
   <div class="testimonial-inner">
-   <!-- <div class="quote-mark">"</div> -->
-    <div>
-      <div class="testimonial-text">Rumana advanced our operational maturity 12–18 months ahead of where companies typically are at our stage. She has been a game-changer in our transition to repeatable, scalable operations.</div>
-      <div class="testimonial-attr">— Kunal Sethy, Founder & CEO, Sparrow Healthcare</div>
-    </div>
+    <div class="testimonial-text">Rumana advanced our operational maturity 12–18 months ahead of where companies typically are at our stage. She has been a game-changer in our transition to repeatable, scalable operations.</div>
+    <div class="testimonial-attr">— Kunal Sethy, Founder & CEO, Sparrow Healthcare</div>
   </div>
 </div>
 
@@ -519,7 +258,7 @@
     <p>I work with <strong>healthcare organizations at an inflection point</strong> — scaling a care model, building operational infrastructure for the first time, navigating rapid growth, or stabilizing after a period of firefighting. Experience includes early-stage health tech, large established health systems, and public and private payers.</p>
   </div>
 
-  <div class="section-label">How I Work With You</div>
+  <div class="section-label label">How I Work With You</div>
 
   <div class="offerings">
 
@@ -530,15 +269,15 @@
           <div class="card-tagline">Embedded operational leadership without the full-time overhead</div>
         </div>
         <div class="card-price">
-          <div class="price-label">Engagement</div>
+          <div class="price-label label">Engagement</div>
           <div class="price-value">3-month minimum</div>
           <div class="price-note">Scope and investment scale with your needs</div>
         </div>
       </div>
       <div class="card-right">
-        <div class="best-when">Best when</div>
+        <div class="best-when label">Best when</div>
         <div class="best-when-text">You're growing and need someone embedded in the work — not just advising from the outside. The team is relying on heroics to keep things running and you're ready to build something more durable.</div>
-        <div class="what-label">What you get</div>
+        <div class="what-label label">What you get</div>
         <ul class="deliverables">
           <li>Performance management systems — KPIs, dashboards, operating reviews, leadership team operating rhythms</li>
           <li>Cross-functional workflow optimization and process design</li>
@@ -556,15 +295,15 @@
           <div class="card-tagline">One problem, scoped cleanly, solved completely</div>
         </div>
         <div class="card-price">
-          <div class="price-label">Engagement</div>
+          <div class="price-label label">Engagement</div>
           <div class="price-value">Scoped after discovery</div>
           <div class="price-note">Fixed fee</div>
         </div>
       </div>
       <div class="card-right">
-        <div class="best-when">Best when</div>
+        <div class="best-when label">Best when</div>
         <div class="best-when-text">You know exactly what needs fixing — or you need a specific system built. You want a defined deliverable with a clear start, end, and handoff to your team.</div>
-        <div class="what-label">Example projects</div>
+        <div class="what-label label">Example projects</div>
         <ul class="deliverables">
           <li>Performance dashboard and KPI system — built and handed off</li>
           <li>Product-operations bridge — translating clinical reality into product requirements</li>
@@ -582,15 +321,15 @@
           <div class="card-tagline">A senior ops brain in your corner — no implementation required</div>
         </div>
         <div class="card-price">
-          <div class="price-label">Engagement</div>
+          <div class="price-label label">Engagement</div>
           <div class="price-value">Flexible commitment</div>
           <div class="price-note">Async-first · limited live calls</div>
         </div>
       </div>
       <div class="card-right">
-        <div class="best-when">Best when</div>
+        <div class="best-when label">Best when</div>
         <div class="best-when-text">You have capable operators running day-to-day, but you need a trusted thinking partner for strategic decisions, sensitive questions, and the occasional "am I thinking about this right?"</div>
-        <div class="what-label">What you get</div>
+        <div class="what-label label">What you get</div>
         <ul class="deliverables">
           <li>Regular strategic check-ins (cadence agreed at start)</li>
           <li>Async support — written feedback, document review</li>
@@ -635,7 +374,8 @@
 </main>
 
 <footer>
-  <span class="footer-name">Rumana Advisory LLC</span>
+  <span class="footer-name label">Rumana Advisory LLC</span>
+  <span class="footer-note">rumanaadvisory.com</span>
 </footer>
 
 </body>
