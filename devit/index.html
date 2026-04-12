@@ -239,7 +239,9 @@ footer a:hover{color:var(--primary)}
 <span>© 2026 Rumana Advisory LLC</span>
 <div class="footer-links">
 <a href="https://www.linkedin.com/in/rumanahussain" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-<a href="mailto:rumana@rumanaadvisory.com">Email</a>
+ <a href="mailto:rumana@rumanaadvisory.com"
+         onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }"
+         class="cta-link">Email</a>
 </div>
 </div>
 </div>
