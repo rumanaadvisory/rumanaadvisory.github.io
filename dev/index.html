@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+const isDev =
+  location.hostname.startsWith("devit.") ||   // devit.yoursite.com
+  location.hostname.includes("-devit") ||     // repo-devit.github.io
+  location.pathname.startsWith("/devit");     // github.io/repo/devit/
+
+if (isDev) {
+  const meta = document.createElement("meta");
+  meta.name = "robots";
+  meta.content = "noindex, nofollow";
+  document.head.appendChild(meta);
+}
+</script>
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rumana Advisory | Fractional COO &amp; Strategy Operations</title>
