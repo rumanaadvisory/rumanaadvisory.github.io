@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rumana Advisory | Fractional COO &amp; Strategy Operations</title>
+<meta name="description" content="Operational leadership for healthcare organizations at an inflection point. Fractional COO, focused projects, and strategic advisory.">
+<meta name="author" content="Rumana Hussain">
+<meta property="og:title" content="Rumana Advisory | Fractional COO">
+<meta property="og:description" content="Operational leadership for healthcare organizations at an inflection point.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#f5f0e8;--fg:#1e2d35;--primary:#1a6b6a;--primary-fg:#f5f0e8;
+--secondary:#e6e0d4;--secondary-fg:#1e2d35;--muted-fg:#5e6b72;
+--card:#f0eadf;--border:#d9d3c6;--accent:#d45a2a;
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+
+/* Tile banner */
+.tile-banner{height:2rem;overflow:hidden}
+.tile-banner img{width:100%;height:100%;object-fit:cover}
+@media(min-width:768px){.tile-banner{height:2.5rem}}
+
+/* Nav */
+nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
+nav .brand{font-size:.875rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-fg)}
+nav a.cta{font-size:.875rem;font-weight:500;color:var(--primary);text-decoration:none;transition:opacity .2s}
+nav a.cta:hover{opacity:.7}
+
+/* Hero */
+.hero{padding:2.5rem 0 3rem}
+@media(min-width:768px){.hero{padding:4rem 0 4rem}}
+.hero-inner{display:flex;flex-direction:column;gap:2.5rem;align-items:flex-start}
+@media(min-width:768px){.hero-inner{flex-direction:row;align-items:center;gap:4rem}}
+.hero-text{max-width:36rem;flex:1}
+.hero-label{font-size:.875rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem}
+.hero-name{font-size:2.5rem;line-height:1.1;margin-bottom:1.5rem}
+@media(min-width:768px){.hero-name{font-size:3.75rem}}
+.hero-desc{font-size:1.125rem;color:var(--muted-fg);line-height:1.6;margin-bottom:2rem}
+@media(min-width:768px){.hero-desc{font-size:1.25rem}}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{padding:.25rem .75rem;border-radius:9999px;background:var(--secondary);font-size:.75rem;font-weight:500;color:var(--secondary-fg)}
+.headshot{width:12rem;height:12rem;border-radius:1rem;overflow:hidden;box-shadow:0 10px 15px -3px rgba(0,0,0,.1);outline:4px solid var(--secondary);flex-shrink:0}
+@media(min-width:768px){.headshot{width:16rem;height:16rem}}
+.headshot img{width:100%;height:100%;object-fit:cover;object-position:top}
+
+/* Testimonial */
+.testimonial{background:var(--primary);color:var(--primary-fg);padding:2rem 0}
+@media(min-width:768px){.testimonial{padding:3rem 0}}
+.testimonial blockquote{max-width:48rem;margin:0 auto;text-align:center;font-size:1.125rem;line-height:1.6;font-weight:300;font-style:italic;margin-bottom:1.5rem}
+@media(min-width:768px){.testimonial blockquote{font-size:1.25rem}}
+.testimonial cite{display:block;text-align:center;font-size:.875rem;font-weight:500;font-style:normal;opacity:.8}
+
+/* About */
+.about{padding:2.5rem 0}
+@media(min-width:768px){.about{padding:3.5rem 0}}
+.about-inner{max-width:66rem}
+.about-inner p{font-size:1.125rem;line-height:1.6;color:var(--muted-fg);margin-bottom:1.5rem}
+@media(min-width:768px){.about-inner p{font-size:1.25rem}}
+.about-inner p.strong{color:var(--fg);font-weight:500}
+
+/* Services */
+.services{background:var(--card);padding:3rem 0}
+@media(min-width:768px){.services{padding:4rem 0}}
+.services h2{font-size:1.875rem;margin-bottom:1rem}
+@media(min-width:768px){.services h2{font-size:2.25rem}}
+.services .subtitle{color:var(--muted-fg);margin-bottom:3rem;max-width:42rem}
+.cards{display:grid;gap:1.5rem}
+@media(min-width:768px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--bg);border:1px solid var(--border);border-radius:1rem;padding:2rem;display:flex;flex-direction:column;transition:box-shadow .3s}
+.card:hover{box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}
+.card h3{font-size:1.25rem;margin-bottom:.5rem}
+.card .card-sub{font-size:.875rem;color:var(--muted-fg);margin-bottom:1.5rem}
+.engagement{background:var(--secondary);border-radius:.75rem;padding:.75rem 1rem;margin-bottom:1.5rem}
+.engagement .label{font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--muted-fg)}
+.engagement .value{font-size:.875rem;font-weight:600}
+.engagement .detail{font-size:.75rem;color:var(--muted-fg)}
+.best-when .label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--primary)}
+.best-when p{font-size:.875rem;color:var(--muted-fg);line-height:1.5;margin-top:.25rem}
+.card ul{list-style:none;margin:1.5rem 0;flex-grow:1}
+.card li{font-size:.875rem;color:var(--muted-fg);margin-bottom:.5rem;padding-left:1rem;position:relative}
+.card li::before{content:"•";color:var(--primary);position:absolute;left:0}
+.card .footer{font-size:.75rem;color:var(--muted-fg);padding-top:1rem;border-top:1px solid var(--border);margin-top:auto}
+
+/* Contact */
+.contact{padding:3rem 0;text-align:center}
+@media(min-width:768px){.contact{padding:4rem 0}}
+.contact h2{font-size:1.875rem;margin-bottom:1rem}
+@media(min-width:768px){.contact h2{font-size:2.25rem}}
+.contact .desc{font-size:1.125rem;color:var(--muted-fg);line-height:1.6;max-width:42rem;margin:0 auto 2.5rem}
+.buttons{display:flex;flex-direction:column;align-items:center;gap:1rem}
+@media(min-width:640px){.buttons{flex-direction:row;justify-content:center}}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.875rem 2rem;border-radius:9999px;font-size:.875rem;font-weight:500;text-decoration:none;transition:all .2s}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-primary:hover{opacity:.9}
+.btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
+.btn-outline:hover{background:var(--primary);color:var(--primary-fg)}
+
+/* Footer */
+footer{padding:2.5rem 0;border-top:1px solid var(--border)}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:1rem}
+@media(min-width:640px){.footer-inner{flex-direction:row;justify-content:space-between}}
+footer span,footer a{font-size:.875rem;color:var(--muted-fg);text-decoration:none}
+footer a:hover{color:var(--primary)}
+.footer-links{display:flex;gap:1.5rem}
+</style>
+</head>
+<body>
+
+<div class="tile-banner"><img src="thin-banner.png" alt="Tiles in Portugal"></div>
+
+<div class="container">
+<section class="hero">
+<nav>
+<span class="brand">Rumana Advisory</span>
+<a href="mailto:rumana@rumanaadvisory.com" class="cta">Get in touch →</a>
+</nav>
+<div class="hero-inner">
+<div class="hero-text">
+<p class="hero-label">Fractional COO · Strategy &amp; Operations</p>
+<h1 class="hero-name">Rumana Hussain</h1>
+<p class="hero-desc">Operational leadership for healthcare organizations at an inflection point.</p>
+<div class="tags">
+<span class="tag">Stanford Health Care</span>
+<span class="tag">Blue Shield of California</span>
+<span class="tag">Alameda Health System</span>
+<span class="tag">MBA/MPH, UC Berkeley</span>
+<span class="tag">BS Computer Science, Washington University in St. Louis</span>
+</div>
+</div>
+<div class="headshot"><img src="headshot.png" alt="Rumana Hussain"></div>
+</div>
+</section>
+</div>
+
+<section class="testimonial">
+<div class="container">
+<blockquote>"Rumana advanced our operational maturity 12–18 months ahead of where companies typically are at our stage. She has been a game-changer in our transition to repeatable, scalable operations."</blockquote>
+<cite>— Kunal Sethy, Founder &amp; CEO, Sparrow Healthcare</cite>
+</div>
+</section>
+
+<section class="about">
+<div class="container">
+<div class="about-inner">
+<p>Healthcare is genuinely complex and constantly evolving — which pulls you towards instability and reactive mode. I've worked inside health systems, run clinics, sat on the payer side, and spent time in early-stage health tech.</p>
+<p>I've seen enough of the system to know where the friction lives, and how to build operations in that reality.</p>
+<p class="strong">I work with founders and leaders who are ready to build something that lasts.</p>
+</div>
+</div>
+</section>
+
+<section class="services">
+<div class="container">
+<h2>How I work with you</h2>
+<p class="subtitle">Three engagement models, each designed for a different stage of need.</p>
+<div class="cards">
+
+<div class="card">
+<h3>Fractional COO</h3>
+<p class="card-sub">You need someone in the work, not just advising on it.</p>
+<div class="engagement"><span class="label">Engagement</span><p class="value">3-month minimum</p><p class="detail">Scope and investment scale with your needs</p></div>
+<div class="best-when"><span class="label">Best when</span><p>The team is holding things together through effort and goodwill, and you know that's not a strategy. You're ready to build something more durable — real processes, real ownership, real visibility.</p></div>
+<ul>
+<li>Performance management systems — KPIs, dashboards, operating reviews</li>
+<li>Cross-functional workflow optimization and process design</li>
+<li>Workforce development — care teams, CHWs, team lead coaching</li>
+<li>Clinical-product alignment and operational bridge-building</li>
+</ul>
+<p class="footer">Typically 3–6 months · 5–20 hrs/week depending on scope</p>
+</div>
+
+<div class="card">
+<h3>Focused Operations Project</h3>
+<p class="card-sub">One problem, scoped cleanly, solved completely.</p>
+<div class="engagement"><span class="label">Engagement</span><p class="value">Scoped after discovery</p><p class="detail">Fixed fee</p></div>
+<div class="best-when"><span class="label">Best when</span><p>You know exactly what needs fixing, or you need a specific system built and handed off. You want a defined deliverable — clear start, clear end, clean transition.</p></div>
+<ul>
+<li>Performance dashboard and KPI system — built and handed off</li>
+<li>Product-operations bridge — translating clinical reality into product requirements</li>
+<li>Capacity modeling and real-time visibility system</li>
+<li>Process design and implementation, including staff training and handoff</li>
+</ul>
+<p class="footer">Fixed fee · clear deliverable and handoff</p>
+</div>
+
+<div class="card">
+<h3>Strategic Advisory Retainer</h3>
+<p class="card-sub">A senior ops brain in your corner.</p>
+<div class="engagement"><span class="label">Engagement</span><p class="value">Flexible commitment</p><p class="detail">Async-first · limited live calls</p></div>
+<div class="best-when"><span class="label">Best when</span><p>You have capable people running the day-to-day. What you need is a thinking partner for decisions that don't have obvious answers.</p></div>
+<ul>
+<li>Regular strategic check-ins (cadence agreed at start)</li>
+<li>Async support — written feedback, document review</li>
+<li>Sounding board for leadership and organizational decisions</li>
+<li>Healthcare-specific expertise on demand</li>
+</ul>
+<p class="footer">Async-first · flexible commitment</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="contact">
+<div class="container">
+<h2>Let's talk about where you are.</h2>
+<p class="desc">A 30-minute discovery call is the best place to start — I'll ask about your current situation and you can ask me anything. No pitch, no pressure.</p>
+<div class="buttons">
+<a href="mailto:rumana@rumanaadvisory.com" class="btn btn-primary">Send me an email</a>
+<a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Book a discovery call</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-inner">
+<span>© 2026 Rumana Advisory LLC</span>
+<div class="footer-links">
+<a href="https://www.linkedin.com/in/rumanahussain" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a href="mailto:rumana@rumanaadvisory.com">Email</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
