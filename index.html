@@ -347,7 +347,8 @@ footer a:hover{color:var(--primary)}
 <section class="hero">
 <nav>
 <span class="brand">Rumana Advisory</span>
-<a href="mailto:rumana@rumanaadvisory.com" class="cta">Get in touch →</a>
+<a href="mailto:rumana@rumanaadvisory.com" class="cta"
+  onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">Get in touch →</a>
 </nav>
 <div class="hero-inner">
 <div class="hero-text">
