@@ -116,6 +116,220 @@ nav a.cta:hover{opacity:.7}
 .btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
 .btn-outline:hover{background:var(--primary);color:var(--primary-fg)}
 
+  .ra-contact {
+    padding: 5rem 1.5rem;
+  }
+ 
+  .ra-contact-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+ 
+  .ra-contact-heading {
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 400;
+    margin: 0 0 0.6rem;
+    color: inherit;
+  }
+ 
+  .ra-contact-subtext {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #666;
+    margin: 0 0 2rem;
+  }
+ 
+  .ra-divider {
+    width: 40px;
+    height: 1px;
+    background: #ddd;
+    margin: 0 0 2rem;
+  }
+ 
+  /* Success state */
+  .ra-success {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #2a6b4a;
+    padding: 14px 16px;
+    border: 0.5px solid #aed4bc;
+    border-radius: 4px;
+    background: #f0f8f3;
+    margin-bottom: 1.5rem;
+  }
+  .ra-success.visible {
+    display: flex;
+  }
+ 
+  /* Form layout */
+  .ra-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+ 
+  .ra-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+ 
+  .ra-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+ 
+  .ra-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #888;
+  }
+ 
+  .ra-input,
+  .ra-select,
+  .ra-textarea {
+    font-family: inherit;
+    font-size: 15px;
+    color: inherit;
+    background: #fff;
+    border: 0.5px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 12px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.15s;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+ 
+  .ra-input:focus,
+  .ra-select:focus,
+  .ra-textarea:focus {
+    border-color: #888;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.04);
+  }
+ 
+  .ra-input::placeholder,
+  .ra-textarea::placeholder {
+    color: #bbb;
+  }
+ 
+  .ra-select {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23888' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+    cursor: pointer;
+  }
+ 
+  .ra-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+  }
+ 
+  /* Submit button */
+  .ra-submit {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: inherit;
+    background: transparent;
+    border: 0.5px solid #aaa;
+    border-radius: 4px;
+    padding: 12px 28px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    position: relative;
+  }
+ 
+  .ra-submit:hover {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+  }
+ 
+  .ra-submit-loading {
+    display: none;
+  }
+ 
+  .ra-submit.loading .ra-submit-text {
+    display: none;
+  }
+ 
+  .ra-submit.loading .ra-submit-loading {
+    display: inline;
+  }
+ 
+  .ra-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+ 
+  /* Or divider */
+  .ra-or {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 0.25rem;
+  }
+ 
+  .ra-or-line {
+    flex: 1;
+    height: 0.5px;
+    background: #e0e0e0;
+  }
+ 
+  .ra-or-text {
+    font-size: 11px;
+    color: #bbb;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+ 
+  /* Alt contact links */
+  .ra-alt {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-top: 0.1rem;
+  }
+ 
+  .ra-alt-link {
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.15s;
+  }
+ 
+  .ra-alt-link:hover {
+    color: #1a1a1a;
+  }
+ 
+  /* Responsive */
+  @media (max-width: 520px) {
+    .ra-row {
+      grid-template-columns: 1fr;
+    }
+    .ra-submit {
+      align-self: stretch;
+      text-align: center;
+    }
+  }
+ 
+
 /* Footer */
 footer{padding:2.5rem 0;border-top:1px solid var(--border)}
 .footer-inner{display:flex;flex-direction:column;align-items:center;gap:1rem}
@@ -228,19 +442,105 @@ My background spans health systems, payers, community health, and early-stage he
 </div>
 </section>
 
-<section class="contact">
+<!--section class="contact">
 <div class="container">
 <h2>Let's talk about where you are.</h2>
 <p class="desc">A 30-minute discovery call is the best place to start — I'll ask about your current situation and you can ask me anything. No pitch, no pressure.</p>
 <div class="buttons">
-<!--<a href="mailto:rumana@rumanaadvisory.com" class="btn btn-primary">Send me an email</a>-->
+
   <a href="mailto:rumana@rumanaadvisory.com" class="btn btn-primary" 
     onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">
     Send me an email</a>
 <a href="https://book.rumanaadvisory.com/coo-ops" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Book a discovery call</a>
 </div>
 </div>
+</section-->
+
+<!-- ============================================================
+  Rumana Advisory — Contact Form Section
+  Formspree endpoint: https://formspree.io/f/mjgjbowl
+  ============================================================ -->
+ 
+<section class="ra-contact" id="contact">
+  <div class="ra-contact-inner">
+    <h2 class="ra-contact-heading">Let's talk about where you are.</h2>
+    <p class="ra-contact-subtext">A 30-minute discovery call is the best place to start — I'll ask about your current situation and you can ask me anything. No pitch, no pressure.</p>
+    <div class="ra-divider"></div>
+ 
+    <!-- Success message (hidden until form submits) -->
+    <div class="ra-success" id="ra-success" aria-live="polite">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Message sent. I'll be in touch shortly.
+    </div>
+ 
+    <form
+      class="ra-form"
+      id="ra-form"
+      action="https://formspree.io/f/mjgjbowl"
+      method="POST"
+    >
+      <div class="ra-row">
+        <div class="ra-field">
+          <label class="ra-label" for="ra-name">Name</label>
+          <input class="ra-input" id="ra-name" name="name" type="text" placeholder="Your name" required autocomplete="name" />
+        </div>
+        <div class="ra-field">
+          <label class="ra-label" for="ra-email">Email</label>
+          <input class="ra-input" id="ra-email" name="email" type="email" placeholder="you@company.com" required autocomplete="email" />
+        </div>
+      </div>
+ 
+      <div class="ra-field">
+        <label class="ra-label" for="ra-org">Organization</label>
+        <input class="ra-input" id="ra-org" name="organization" type="text" placeholder="Company or health system" />
+      </div>
+ 
+      <div class="ra-field">
+        <label class="ra-label" for="ra-interest">What brings you here?</label>
+        <select class="ra-select" id="ra-interest" name="interest">
+          <option value="" disabled selected>Select one</option>
+          <option value="Fractional COO engagement">Fractional COO engagement</option>
+          <option value="Focused operations project">Focused operations project</option>
+          <option value="Strategic advisory retainer">Strategic advisory retainer</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+ 
+      <div class="ra-field">
+        <label class="ra-label" for="ra-message">Anything you'd like me to know</label>
+        <textarea class="ra-textarea" id="ra-message" name="message" placeholder="What's the inflection point you're navigating? No need to be polished — a sentence or two is plenty."></textarea>
+      </div>
+ 
+      <button class="ra-submit" type="submit">
+        <span class="ra-submit-text">Send message →</span>
+        <span class="ra-submit-loading" aria-hidden="true">Sending…</span>
+      </button>
+ 
+      <div class="ra-or">
+        <div class="ra-or-line"></div>
+        <span class="ra-or-text">or</span>
+        <div class="ra-or-line"></div>
+      </div>
+ 
+      <div class="ra-alt">
+        <a href="mailto:rumana@rumanaadvisory.com" class="ra-alt-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="2.5" width="12" height="9" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M1 4l6 4 6-4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+          rumana@rumanaadvisory.com
+        </a>
+        <a href="https://www.linkedin.com/in/rumanahussain" class="ra-alt-link" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.1"/><path d="M4.5 6.5v4M4.5 4v.5M6.5 10.5V7a1 1 0 012 0v3.5M9.5 7v3.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://book.rumanaadvisory.com/coo-ops" class="ra-alt-link" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/><path d="M7 4.5v3l2 1" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Book a call
+        </a>
+      </div>
+    </form>
+  </div>
 </section>
+
+  
 
 <footer>
 <div class="container">
@@ -255,6 +555,42 @@ My background spans health systems, payers, community health, and early-stage he
 </div>
 </div>
 </footer>
-
+<script>
+  (function () {
+    var form = document.getElementById('ra-form');
+    var success = document.getElementById('ra-success');
+    var btn = form.querySelector('.ra-submit');
+ 
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      btn.classList.add('loading');
+      btn.disabled = true;
+ 
+      var data = new FormData(form);
+ 
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            form.style.display = 'none';
+            success.classList.add('visible');
+          } else {
+            return res.json().then(function (json) {
+              throw new Error(json.error || 'Submission failed');
+            });
+          }
+        })
+        .catch(function (err) {
+          btn.classList.remove('loading');
+          btn.disabled = false;
+          alert('Something went wrong — please email me directly at rumana@rumanaadvisory.com');
+          console.error(err);
+        });
+    });
+  })();
+</script>
 </body>
 </html>
