@@ -1,599 +1,451 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<script>
-const isDev =
-  location.hostname.startsWith("devit.") ||   // devit.yoursite.com
-  location.hostname.includes("-devit") ||     // repo-devit.github.io
-  location.pathname.startsWith("/devit");     // github.io/repo/devit/
-
-if (isDev) {
-  const meta = document.createElement("meta");
-  meta.name = "robots";
-  meta.content = "noindex, nofollow";
-  document.head.appendChild(meta);
-}
-</script>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rumana Advisory | Fractional COO &amp; Strategy Operations</title>
-<meta name="description" content="Operational leadership for healthcare organizations at an inflection point. Fractional COO, focused projects, and strategic advisory.">
-<meta name="author" content="Rumana Hussain">
-<meta property="og:title" content="Rumana Advisory | Fractional COO">
-<meta property="og:description" content="Operational leadership for healthcare organizations at an inflection point.">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rumana Advisory | Fractional COO for Series A–B Healthtech</title>
+<meta name="description" content="Rumana Hussain, fractional COO for Series A–B healthtech. Making mission-driven healthtech companies easier to run: clear goals, useful metrics, and workflows that service teams use.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
---bg:#f5f0e8;--fg:#1e2d35;--primary:#1a6b6a;--primary-fg:#f5f0e8;
---secondary:#e6e0d4;--secondary-fg:#1e2d35;--muted-fg:#5e6b72;
---card:#f0eadf;--border:#d9d3c6;--accent:#d45a2a;
-}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'DM Serif Display',Georgia,serif}
-.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+  :root {
+    --sky: #d6dfe3;
+    --sky-deep: #c5d2d8;
+    --cream: #faf8f4;
+    --paper: #ffffff;
+    --line: #e2dccf;
+    --ink: #1f2d3a;
+    --ink-soft: #4a5862;
+    --orange: #c8643a;
+    --mustard: #e2b155;
+    --teal: #3a8a7a;
+    --green: #2a7a64;
 
-/* Tile banner */
-.tile-banner{height:2rem;overflow:hidden}
-.tile-banner img{width:100%;height:100%;object-fit:cover}
-@media(min-width:768px){.tile-banner{height:2.5rem}}
+    /* Two fonts: Georgia (the banner serif) for headings, Inter for text */
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-/* Nav */
-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
-nav .brand{font-size:.875rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-fg)}
-nav a.cta{font-size:.875rem;font-weight:500;color:var(--primary);text-decoration:none;transition:opacity .2s}
-nav a.cta:hover{opacity:.7}
+    /* Five sizes */
+    --fs-xl: clamp(28px, 3.4vw, 36px);  /* page headline */
+    --fs-lg: 23px;                       /* section headings */
+    --fs-md: 17px;                       /* card and item headings, quote */
+    --fs-base: 15px;                     /* body text */
+    --fs-sm: 13px;                       /* labels, details, nav */
 
-/* Hero */
-.hero{padding:2.5rem 0 3rem}
-@media(min-width:768px){.hero{padding:4rem 0 4rem}}
-.hero-inner{display:flex;flex-direction:column;gap:2.5rem;align-items:flex-start}
-@media(min-width:768px){.hero-inner{flex-direction:row;align-items:center;gap:4rem}}
-.hero-text{rem;flex:1} /* max-width:36 */
-.hero-label{font-size:.875rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem}
-.hero-name{font-size:2.5rem;line-height:1.1;margin-bottom:1.5rem}
-@media(min-width:768px){.hero-name{font-size:3.75rem}}
-.hero-desc{font-size:1.125rem;color:var(--muted-fg);line-height:1.6;margin-bottom:2rem}
-@media(min-width:768px){.hero-desc{font-size:1.25rem}}
-.tags{display:flex;flex-wrap:wrap;gap:.5rem}
-.tag{padding:.25rem .75rem;border-radius:9999px;background:var(--secondary);font-size:.75rem;font-weight:500;color:var(--secondary-fg)}
-.headshot{width:12rem;height:12rem;border-radius:1rem;overflow:hidden;box-shadow:0 10px 15px -3px rgba(0,0,0,.1);outline:4px solid var(--secondary);flex-shrink:0}
-@media(min-width:768px){.headshot{width:16rem;height:16rem}}
-.headshot img{width:100%;height:100%;object-fit:cover;object-position:top}
+    --max: 920px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    margin: 0; background: var(--cream); color: var(--ink);
+    font-family: var(--sans); font-size: var(--fs-base); line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--green); }
+  p { margin: 0; }
+  .wrap { max-width: calc(var(--max) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
+  :root { --gutter: clamp(24px, 5vw, 64px); }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); margin: 0; }
+  h1 { font-size: var(--fs-xl); line-height: 1.15; }
+  h2 { font-size: var(--fs-lg); line-height: 1.25; margin-bottom: 8px; }
+  h3 { font-size: var(--fs-md); line-height: 1.3; margin-bottom: 6px; }
+  .small, .label { font-size: var(--fs-sm); }
+  .label { font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
+  .soft { color: var(--ink-soft); }
 
-/* Testimonial */
-.testimonial{background:var(--primary);color:var(--primary-fg);padding:2rem 0}
-@media(min-width:768px){.testimonial{padding:3rem 0}}
-.testimonial blockquote{max-width:60rem;margin:0 auto;text-align:center;font-size:1.125rem;line-height:1.6;font-weight:300;font-style:italic;margin-bottom:1.5rem}
-@media(min-width:768px){.testimonial blockquote{font-size:1.25rem}}
-.testimonial cite{display:block;text-align:center;font-size:.875rem;font-weight:500;font-style:normal;opacity:.8}
+  /* Nav */
+  /* Top bar stays in view so "Get in touch" is always one click away */
+  .nav { background: var(--sky); position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #c5d2d8; }
+  .cta-link { margin-top: 18px; font-size: var(--fs-sm); font-weight: 600; }
+  .cta-link a { color: var(--green); text-decoration: none; }
+  .cta-link a:hover { text-decoration: underline; }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { font-family: var(--serif); font-size: var(--fs-md); color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 22px; align-items: center; font-size: var(--fs-sm); font-weight: 600; }
+  .nav-links a { color: var(--ink); text-decoration: none; }
+  .nav-links a:hover { color: var(--green); }
 
-/* About */
-.about{padding:2.5rem 0}
-@media(min-width:768px){.about{padding:3.5rem 0}}
-.about-inner{max-width:66rem}
-.about-inner p{font-size:1.125rem;line-height:1.6;color:var(--muted-fg);margin-bottom:1.5rem}
-@media(min-width:768px){.about-inner p{font-size:1.25rem}}
-.about-inner p.strong{color:var(--fg);font-weight:500}
+  /* Buttons */
+  .btn {
+    display: inline-block; padding: 11px 20px; border-radius: 6px; font-weight: 600; font-size: var(--fs-base);
+    text-decoration: none; border: 1.5px solid var(--ink); transition: background .15s, color .15s; font-family: var(--sans);
+  }
+  .btn-primary { background: var(--ink); color: var(--cream); }
+  .btn-primary:hover { background: var(--green); border-color: var(--green); }
+  .btn-ghost { color: var(--ink); background: transparent; }
+  .btn-ghost:hover { background: var(--ink); color: var(--cream); }
+  .nav .btn { padding: 6px 14px; font-size: var(--fs-sm); }
 
-/* Services */
-.services{background:var(--card);padding:3rem 0}
-@media(min-width:768px){.services{padding:4rem 0}}
-.services h2{font-size:1.875rem;margin-bottom:1rem}
-@media(min-width:768px){.services h2{font-size:2.25rem}}
-.services .subtitle{color:var(--muted-fg);margin-bottom:3rem;max-width:42rem}
-.cards{display:grid;gap:1.5rem}
-@media(min-width:768px){.cards{grid-template-columns:repeat(3,1fr)}}
-.card{background:var(--bg);border:1px solid var(--border);border-radius:1rem;padding:2rem;display:flex;flex-direction:column;transition:box-shadow .3s}
-.card:hover{box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}
-.card h3{font-size:1.25rem;margin-bottom:.5rem}
-.card .card-sub{font-size:.875rem;color:var(--muted-fg);margin-bottom:1.5rem}
-.engagement{background:var(--secondary);border-radius:.75rem;padding:.75rem 1rem;margin-bottom:1.5rem}
-.engagement .label{font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--muted-fg)}
-.engagement .value{font-size:.875rem;font-weight:600}
-.engagement .detail{font-size:.75rem;color:var(--muted-fg)}
-.best-when .label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--primary)}
-.best-when p{font-size:.875rem;color:var(--muted-fg);line-height:1.5;margin-top:.25rem}
-.card ul{list-style:none;margin:1.5rem 0;flex-grow:1}
-.card li{font-size:.875rem;color:var(--muted-fg);margin-bottom:.5rem;padding-left:1rem;position:relative}
-.card li::before{content:"•";color:var(--primary);position:absolute;left:0}
-.card .footer{font-size:.75rem;color:var(--muted-fg);padding-top:1rem;border-top:1px solid var(--border);margin-top:auto}
+  /* Hero */
+  .hero { background: var(--sky); padding: 36px 0 52px; }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; align-items: center; }
+  .hero .label { margin-bottom: 12px; }
+  .hero h1 { margin-bottom: 16px; }
+  .hero .lede { color: #34434d; max-width: 560px; margin-bottom: 22px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; max-width: 600px; }
+  .pills li {
+    font-size: 12px; line-height: 1.4; color: var(--ink); background: rgba(255,255,255,.55);
+    border: 1px solid #bccad0; border-radius: 999px; padding: 2px 10px;
+  }
+  .hero-visual { position: relative; max-width: 280px; justify-self: end; width: 100%; }
+  .portrait {
+    width: 100%; aspect-ratio: 382 / 456; display: block; border-radius: 14px;
+    object-fit: cover; object-position: top; box-shadow: 0 10px 30px rgba(31,45,58,.18); background: var(--sky-deep);
+  }
+  /* Same two columns as the trigger list, so the visual lines up with the right-hand bullets */
+  .when-head { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; align-items: center; margin-bottom: 24px; }
+  .when-head .when-visual { justify-self: start; width: 100%; max-width: 360px; }
+  .when-head .section-head { margin-bottom: 0; }
+  .when-visual { background: var(--sky); border-radius: 10px; padding: 10px 14px; }
+  .when-visual svg { width: 100%; height: auto; display: block; }
 
-/* Contact */
-.contact{padding:3rem 0;text-align:center}
-@media(min-width:768px){.contact{padding:4rem 0}}
-.contact h2{font-size:1.875rem;margin-bottom:1rem}
-@media(min-width:768px){.contact h2{font-size:2.25rem}}
-.contact .desc{font-size:1.125rem;color:var(--muted-fg);line-height:1.6;max-width:42rem;margin:0 auto 2.5rem}
-.buttons{display:flex;flex-direction:column;align-items:center;gap:1rem}
-@media(min-width:640px){.buttons{flex-direction:row;justify-content:center}}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:.875rem 2rem;border-radius:9999px;font-size:.875rem;font-weight:500;text-decoration:none;transition:all .2s}
-.btn-primary{background:var(--primary);color:var(--primary-fg)}
-.btn-primary:hover{opacity:.9}
-.btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
-.btn-outline:hover{background:var(--primary);color:var(--primary-fg)}
+  /* Sections */
+  section { padding: 52px 0; }
+  /* One background below the hero; sections separated by a thin rule */
+  section + section, .quote + section, section + .quote { border-top: 1px solid var(--line); }
+  .section-head { max-width: 700px; margin-bottom: 20px; }
+  .section-head p { color: var(--ink-soft); }
 
-  .ra-contact {
-    padding: 5rem 1.5rem;
+  /* Plain lists */
+  .triggers strong { font-weight: 600; color: var(--ink); }
+  .triggers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 40px; list-style: none; padding: 0; margin: 0; color: var(--ink-soft); }
+  .triggers li { position: relative; padding-left: 22px; }
+  .triggers li::before {
+    content: ""; position: absolute; left: 0; top: 6px; width: 10px; height: 10px; border-radius: 2px;
+    background: var(--c, var(--teal)); transform: rotate(-12deg);
   }
- 
-  .ra-contact-inner {
-    max-width: 680px;
-    margin: 0 auto;
-  }
- 
-  .ra-contact-heading {
-    font-family: var(--font-serif, Georgia, serif);
-    font-size: clamp(22px, 4vw, 30px);
-    font-weight: 400;
-    margin: 0 0 0.6rem;
-    color: inherit;
-  }
- 
-  .ra-contact-subtext {
-    font-size: 16px;
-    line-height: 1.65;
-    color: #666;
-    margin: 0 0 2rem;
-  }
- 
-  .ra-divider {
-    width: 40px;
-    height: 1px;
-    background: #ddd;
-    margin: 0 0 2rem;
-  }
- 
-  /* Success state */
-  .ra-success {
-    display: none;
-    align-items: center;
-    gap: 10px;
-    font-size: 15px;
-    color: #2a6b4a;
-    padding: 14px 16px;
-    border: 0.5px solid #aed4bc;
-    border-radius: 4px;
-    background: #f0f8f3;
-    margin-bottom: 1.5rem;
-  }
-  .ra-success.visible {
-    display: flex;
-  }
- 
-  /* Form layout */
-  .ra-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
- 
-  .ra-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
- 
-  .ra-field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
- 
-  .ra-label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: #888;
-  }
- 
-  .ra-input,
-  .ra-select,
-  .ra-textarea {
-    font-family: inherit;
-    font-size: 15px;
-    color: inherit;
-    background: #fff;
-    border: 0.5px solid #ccc;
-    border-radius: 4px;
-    padding: 10px 12px;
-    width: 100%;
-    box-sizing: border-box;
-    transition: border-color 0.15s;
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-  }
- 
-  .ra-input:focus,
-  .ra-select:focus,
-  .ra-textarea:focus {
-    border-color: #888;
-    box-shadow: 0 0 0 3px rgba(0,0,0,0.04);
-  }
- 
-  .ra-input::placeholder,
-  .ra-textarea::placeholder {
-    color: #bbb;
-  }
- 
-  .ra-select {
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23888' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    padding-right: 32px;
-    cursor: pointer;
-  }
- 
-  .ra-textarea {
-    resize: vertical;
-    min-height: 120px;
-    line-height: 1.6;
-  }
- 
-  /* Submit button */
-  .ra-submit {
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    color: inherit;
-    background: transparent;
-    border: 0.5px solid #aaa;
-    border-radius: 4px;
-    padding: 12px 28px;
-    cursor: pointer;
-    align-self: flex-start;
-    transition: background 0.15s, color 0.15s, border-color 0.15s;
-    position: relative;
-  }
- 
-  .ra-submit:hover {
-    background: #1a1a1a;
-    color: #fff;
-    border-color: #1a1a1a;
-  }
- 
-  .ra-submit-loading {
-    display: none;
-  }
- 
-  .ra-submit.loading .ra-submit-text {
-    display: none;
-  }
- 
-  .ra-submit.loading .ra-submit-loading {
-    display: inline;
-  }
- 
-  .ra-submit:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
- 
-  /* Or divider */
-  .ra-or {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 0.25rem;
-  }
- 
-  .ra-or-line {
-    flex: 1;
-    height: 0.5px;
-    background: #e0e0e0;
-  }
- 
-  .ra-or-text {
-    font-size: 11px;
-    color: #bbb;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
- 
-  /* Alt contact links */
-  .ra-alt {
-    display: flex;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    margin-top: 0.1rem;
-  }
- 
-  .ra-alt-link {
-    font-size: 14px;
-    color: #666;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.15s;
-  }
- 
-  .ra-alt-link:hover {
-    color: #1a1a1a;
-  }
- 
-  /* Responsive */
-  @media (max-width: 520px) {
-    .ra-row {
-      grid-template-columns: 1fr;
-    }
-    .ra-submit {
-      align-self: stretch;
-      text-align: center;
-    }
-  }
- 
+  .triggers li:nth-child(3n+1) { --c: var(--orange); }
+  .triggers li:nth-child(3n+2) { --c: var(--mustard); }
 
-/* Footer */
-footer{padding:2.5rem 0;border-top:1px solid var(--border)}
-.footer-inner{display:flex;flex-direction:column;align-items:center;gap:1rem}
-@media(min-width:640px){.footer-inner{flex-direction:row;justify-content:space-between}}
-footer span,footer a{font-size:.875rem;color:var(--muted-fg);text-decoration:none}
-footer a:hover{color:var(--primary)}
-.footer-links{display:flex;gap:1.5rem}
+  /* Columns of text: no boxes */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .card p { color: var(--ink-soft); }
+  /* Banner colors appear once, on the engagement steps */
+  #how .grid-3, #what-i-do .grid-3, #how-i-work .grid-4 { gap: 18px; }
+  #how .card, #what-i-do .card, #how-i-work .card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
+  }
+  #how .card { border-top: 4px solid var(--bar); }
+  .c-orange { --bar: var(--orange); }
+  .c-mustard { --bar: var(--mustard); }
+  .c-teal { --bar: var(--teal); }
+
+  /* Quote */
+  .quote { padding: 32px 0; background: var(--paper); }
+  .quote blockquote { margin: 0 auto; max-width: 720px; text-align: center; }
+  .quote p { font-family: var(--serif); font-size: var(--fs-md); line-height: 1.5; margin-bottom: 12px; }
+  .quote cite { font-style: normal; font-size: var(--fs-sm); color: var(--ink-soft); }
+
+  /* Experience */
+  .exp { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 40px; }
+  .exp p { color: var(--ink-soft); }
+
+  /* Contact */
+  .contact { background: var(--sky); }
+  .contact .section-head p { color: #34434d; }
+  /* Message form on the left; email, LinkedIn and booking stacked on the right */
+  .contact .section-head { margin-left: auto; margin-right: auto; text-align: center; }
+  .options { display: grid; grid-template-columns: minmax(0, 420px) 200px; justify-content: center; gap: 32px; align-items: stretch; }
+  .option-stack .btn {
+    background: var(--cream); border: 1px solid var(--line); color: var(--ink);
+    box-shadow: 0 1px 3px rgba(31,45,58,.08);
+  }
+  .option-stack .btn:hover { background: var(--paper); border-color: var(--ink-soft); color: var(--ink); }
+  /* Three equal-width buttons, centered against the form */
+  .option-stack { display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+  .option-stack .btn { width: 200px; text-align: center; font-size: var(--fs-sm); padding: 9px 14px; }
+  .option {
+    display: flex; flex-direction: column; gap: 8px; align-items: flex-start;
+    background: var(--cream); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
+  }
+  .option h3 { margin-bottom: 2px; }
+  .option p { color: var(--ink-soft); font-size: var(--fs-sm); flex: 1; }
+  .option .btn { font-size: var(--fs-sm); padding: 6px 14px; margin-top: auto; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  input, textarea {
+    width: 100%; font: inherit; font-size: var(--fs-sm); padding: 7px 10px; border: 1px solid #cfc8ba; border-radius: 6px;
+    background: var(--paper); color: var(--ink);
+  }
+  input:focus, textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+  textarea { resize: vertical; }
+  form .btn { border: none; cursor: pointer; }
+
+  footer { background: var(--ink); color: #b9c6cc; font-size: var(--fs-sm); padding: 20px 0; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a { color: #e6ecee; text-decoration: none; margin-left: 20px; }
+
+  @media (max-width: 860px) {
+    .hero-grid, .options, .grid-3, .grid-4, .exp, .triggers { grid-template-columns: 1fr; }
+    .hero-visual { max-width: 220px; justify-self: start; grid-row: 1; }
+    .option-stack { align-items: center; }
+    .hero-grid { gap: 24px; }
+    .when-head { grid-template-columns: 1fr; gap: 20px; }
+    .when-visual { max-width: 360px; }
+    section { padding: 44px 0; }
+  }
+  @media (min-width: 561px) and (max-width: 860px) {
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    :root { --fs-lg: 21px; --fs-md: 16px; }
+    :root { --gutter: 16px; }
+    .hide-sm { display: none; }
+    footer a { margin: 0 20px 0 0; }
+  }
 </style>
 </head>
 <body>
 
-<div class="tile-banner"><img src="thin-banner.png" alt="Tiles in Portugal"></div>
-
-<div class="container">
-<section class="hero">
-<nav>
-<span class="brand">Rumana Advisory</span>
-<a href="mailto:rumana@rumanaadvisory.com" class="cta"
-  onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">Get in touch →</a>
-</nav>
-<div class="hero-inner">
-<div class="hero-text">
-<p class="hero-label">Fractional COO · Strategy &amp; Operations</p>
-<h1 class="hero-name">Rumana Hussain</h1>
-<p class="hero-desc">Operational leadership for healthcare organizations at an inflection point.</p>
-<div class="tags">
-<span class="tag">Stanford Health Care</span>
-<span class="tag">Blue Shield of California</span>
-<span class="tag">Alameda Health System</span>
-</div><br/>
-<div class="tags">
-<span class="tag">MBA/MPH, UC Berkeley</span>
-<span class="tag">BS Computer Science, Washington University in St. Louis</span>
-</div>
-</div>
-<div class="headshot"><img src="headshot.png" alt="Rumana Hussain"></div>
-</div>
-</section>
-</div>
-
-<section class="testimonial">
-<div class="container">
-<blockquote>"Rumana advanced our operational maturity 12–18 months ahead of where companies typically are at our stage. She has been a game-changer in our transition to repeatable, scalable operations."</blockquote>
-<cite>— Kunal Sethy, Founder &amp; CEO, Sparrow Healthcare</cite>
-</div>
-</section>
-
-<section class="about">
-<div class="container">
-<div class="about-inner">
-<p>I help healthcare organizations build the operating systems that let people stop reacting and start executing — providing care, driving growth, delivering results.
-My background spans health systems, payers, community health, and early-stage health tech. That range means I can translate across the silos that usually stay siloed, 
-  and bring a strategic read that's grounded in how the whole system works, not just one view of it. </p>
-
-  <!--p>Healthcare is genuinely complex and constantly evolving — which pulls you towards instability and reactive mode. I've worked inside health systems, run clinics, sat on the payer side, and spent time in early-stage health tech.</p>
-<p>I've seen enough of the system to know where the friction lives, and how to build operations in that reality.</p-->
-<p class="strong">I work with founders and leaders who are ready to build something  durable.</p>
-</div>
-</div>
-</section>
-
-<section class="services">
-<div class="container">
-<h2>How I work with you</h2>
-<p class="subtitle">Three engagement models, each designed for a different stage of need.</p>
-<div class="cards">
-
-<div class="card">
-<h3>Fractional COO</h3>
-<p class="card-sub">You need someone in the work, not just advising on it.</p>
-<div class="engagement"><span class="label">Engagement</span><p class="value">3-month minimum</p><p class="detail">Scope and investment scale with your needs</p></div>
-<div class="best-when"><span class="label">Best when</span><p>The team is holding things together through effort and goodwill, and you know that's not a strategy. You're ready to build something more durable — real processes, real ownership, real visibility.</p></div>
-<ul>
-<li>Performance management systems — KPIs, dashboards, operating reviews</li>
-<li>Cross-functional workflow optimization and process design</li>
-<li>Workforce development — care teams, CHWs, team lead coaching</li>
-<li>Clinical-product alignment and operational bridge-building</li>
-</ul>
-<p class="footer">Typically 3–6 months · 5–20 hrs/week depending on scope</p>
-</div>
-
-<div class="card">
-<h3>Focused Operations Project</h3>
-<p class="card-sub">One problem, scoped cleanly, solved completely.</p>
-<div class="engagement"><span class="label">Engagement</span><p class="value">Scoped after discovery</p><p class="detail">Fixed fee</p></div>
-<div class="best-when"><span class="label">Best when</span><p>You know exactly what needs fixing, or you need a specific system built and handed off. You want a defined deliverable — clear start, clear end, clean transition.</p></div>
-<ul>
-<li>Performance dashboard and KPI system — built and handed off</li>
-<li>Product-operations bridge — translating clinical reality into product requirements</li>
-<li>Capacity modeling and real-time visibility system</li>
-<li>Process design and implementation, including staff training and handoff</li>
-</ul>
-<p class="footer">Fixed fee · clear deliverable and handoff</p>
-</div>
-
-<div class="card">
-<h3>Strategic Advisory Retainer</h3>
-<p class="card-sub">A senior ops brain in your corner.</p>
-<div class="engagement"><span class="label">Engagement</span><p class="value">Flexible commitment</p><p class="detail">Async-first · limited live calls</p></div>
-<div class="best-when"><span class="label">Best when</span><p>You have capable people running the day-to-day. What you need is a thinking partner for decisions that don't have obvious answers.</p></div>
-<ul>
-<li>Regular strategic check-ins (cadence agreed at start)</li>
-<li>Async support — written feedback, document review</li>
-<li>Sounding board for leadership and organizational decisions</li>
-<li>Healthcare-specific expertise on demand</li>
-</ul>
-<p class="footer">Async-first · flexible commitment</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!--section class="contact">
-<div class="container">
-<h2>Let's talk about where you are.</h2>
-<p class="desc">A 30-minute discovery call is the best place to start — I'll ask about your current situation and you can ask me anything. No pitch, no pressure.</p>
-<div class="buttons">
-
-  <a href="mailto:rumana@rumanaadvisory.com" class="btn btn-primary" 
-    onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">
-    Send me an email</a>
-<a href="https://book.rumanaadvisory.com/coo-ops" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Book a discovery call</a>
-</div>
-</div>
-</section-->
-
-<!-- ============================================================
-  Rumana Advisory — Contact Form Section
-  Formspree endpoint: https://formspree.io/f/mjgjbowl
-  ============================================================ -->
- 
-<section class="ra-contact" id="contact">
-  <div class="ra-contact-inner">
-    <h2>Let's talk about where you are.</h2>
-    <p class="ra-contact-subtext">A 30-minute discovery call is the best place to start — I'll ask about your current situation and you can ask me anything. No pitch, no pressure.</p>
-    <div class="ra-divider"></div>
- 
-    <!-- Success message (hidden until form submits) -->
-    <div class="ra-success" id="ra-success" aria-live="polite">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Message sent. I'll be in touch shortly.
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Rumana Advisory</a>
+    <div class="nav-links">
+      <a class="hide-sm" href="#what-i-do">What I do</a>
+      <a class="hide-sm" href="#experience">Experience</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
     </div>
- 
-    <form
-      class="ra-form"
-      id="ra-form"
-      action="https://formspree.io/f/mjgjbowl"
-      method="POST"
-    >
-      <div class="ra-row">
-        <div class="ra-field">
-          <label class="ra-label" for="ra-name">Name</label>
-          <input class="ra-input" id="ra-name" name="name" type="text" placeholder="Your name" required autocomplete="name" />
-        </div>
-        <div class="ra-field">
-          <label class="ra-label" for="ra-email">Email</label>
-          <input class="ra-input" id="ra-email" name="email" type="email" placeholder="you@company.com" required autocomplete="email" />
-        </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="label">Rumana Hussain · Fractional COO for Series A–B healthtech</p>
+      <h1>Making mission-driven healthtech companies easier to run</h1>
+      <p class="lede">Clear goals, useful metrics, and workflows that service teams use, for startups serving people the health system wasn't designed for.</p>
+      <ul class="pills" aria-label="Experience and education">
+        <li>Stanford Health Care</li>
+        <li>Blue Shield of California</li>
+        <li>Alameda Health System</li>
+        <li>MBA/MPH, UC Berkeley</li>
+        <li>BS Computer Science, Washington University in St. Louis</li>
+      </ul>
+    </div>
+    <div class="hero-visual">
+      <img class="portrait" src="https://rumanaadvisory.com/headshot.png" alt="Rumana Hussain">
+    </div>
+  </div>
+</header>
+
+<div class="quote">
+  <div class="wrap">
+    <blockquote>
+      <p>"Rumana advanced our operational maturity 12–18 months ahead of where companies typically are at our stage. She has been a game-changer in our transition to repeatable, scalable operations."</p>
+      <cite>Kunal Sethy, Founder &amp; CEO, Sparrow Healthcare</cite>
+    </blockquote>
+  </div>
+</div>
+
+<section id="when">
+  <div class="wrap">
+    <div class="when-head">
+      <div class="section-head">
+        <h2>When teams bring me in</h2>
+        <p>Usually during a transition, a new launch, or as the first person in a role.</p>
       </div>
- 
-      <div class="ra-field">
-        <label class="ra-label" for="ra-org">Organization</label>
-        <input class="ra-input" id="ra-org" name="organization" type="text" placeholder="Company or health system" />
+      <div class="when-visual">
+      <!-- Banner motif: scattered priorities become a clear list, then a metric that reaches its target -->
+      <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g>
+          <rect x="18" y="58" width="30" height="24" rx="2" fill="#e2b155" transform="rotate(-22 33 70)"/>
+          <rect x="74" y="30" width="30" height="24" rx="2" fill="#c8643a" transform="rotate(14 89 42)"/>
+          <rect x="112" y="88" width="30" height="24" rx="2" fill="#3a8a7a" transform="rotate(-6 127 100)"/>
+          <rect x="40" y="168" width="28" height="24" rx="2" fill="#3a8a7a" transform="rotate(32 54 180)"/>
+          <rect x="120" y="150" width="30" height="24" rx="2" fill="#c8643a" transform="rotate(9 135 162)"/>
+          <rect x="84" y="208" width="30" height="24" rx="2" fill="#e2b155" transform="rotate(-14 99 220)"/>
+          <rect x="156" y="118" width="28" height="24" rx="2" fill="#e2b155"/>
+        </g>
+        <path d="M194 130 h30" stroke="#7a4a32" stroke-width="2" fill="none"/>
+        <path d="M218 124 l7 6 -7 6" stroke="#7a4a32" stroke-width="2" fill="none"/>
+        <rect x="238" y="40" width="270" height="190" rx="10" fill="#faf8f4" stroke="#d8d0c0" stroke-width="1.5"/>
+        <g>
+          <rect x="256" y="74" width="78" height="26" rx="4" fill="#fff" stroke="#e2dccf"/>
+          <rect x="256" y="74" width="7" height="26" rx="2" fill="#c8643a"/>
+          <rect x="272" y="84" width="48" height="5" rx="2.5" fill="#ddd5c6"/>
+          <rect x="256" y="114" width="78" height="26" rx="4" fill="#fff" stroke="#e2dccf"/>
+          <rect x="256" y="114" width="7" height="26" rx="2" fill="#e2b155"/>
+          <rect x="272" y="124" width="38" height="5" rx="2.5" fill="#ddd5c6"/>
+          <rect x="256" y="154" width="78" height="26" rx="4" fill="#fff" stroke="#e2dccf"/>
+          <rect x="256" y="154" width="7" height="26" rx="2" fill="#3a8a7a"/>
+          <rect x="272" y="164" width="44" height="5" rx="2.5" fill="#ddd5c6"/>
+        </g>
+        <path d="M344 127 h22" stroke="#2b2b2b" stroke-width="1.6" fill="none"/>
+        <path d="M361 122 l6 5 -6 5" stroke="#2b2b2b" stroke-width="1.6" fill="none"/>
+        <path d="M380 62 v140 h112" stroke="#c9c0ae" stroke-width="1.4" fill="none"/>
+        <path d="M380 80 h112" stroke="#c8643a" stroke-width="1.6" stroke-dasharray="4 4" fill="none"/>
+        <path d="M386 190 L420 178 L486 82" stroke="#2a7a64" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="486" cy="82" r="6" fill="#2a7a64"/>
+      </svg>
       </div>
- 
-      <div class="ra-field">
-        <label class="ra-label" for="ra-interest">What brings you here?</label>
-        <select class="ra-select" id="ra-interest" name="interest">
-          <option value="" disabled selected>Select one</option>
-          <option value="Fractional COO engagement">Fractional COO engagement</option>
-          <option value="Focused operations project">Focused operations project</option>
-          <option value="Strategic advisory retainer">Strategic advisory retainer</option>
-          <option value="Not sure yet">Not sure yet</option>
-        </select>
-      </div>
- 
-      <div class="ra-field">
-        <label class="ra-label" for="ra-message">Anything you'd like me to know</label>
-        <textarea class="ra-textarea" id="ra-message" name="message" placeholder="What's the inflection point you're navigating? No need to be polished — a sentence or two is plenty."></textarea>
-      </div>
- 
-      <button class="ra-submit" type="submit">
-        <span class="ra-submit-text">Send message →</span>
-        <span class="ra-submit-loading" aria-hidden="true">Sending…</span>
-      </button>
- 
-      <div class="ra-or">
-        <div class="ra-or-line"></div>
-        <span class="ra-or-text">or</span>
-        <div class="ra-or-line"></div>
-      </div>
- 
-      <div class="ra-alt">
-        <a href="mailto:rumana@rumanaadvisory.com" class="ra-alt-link" onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="2.5" width="12" height="9" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M1 4l6 4 6-4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
-          Email
-        </a>
-        <a href="https://www.linkedin.com/in/rumanahussain" class="ra-alt-link">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.1"/><path d="M4.5 6.5v4M4.5 4v.5M6.5 10.5V7a1 1 0 012 0v3.5M9.5 7v3.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://book.rumanaadvisory.com/coo-ops" class="ra-alt-link" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.1"/><path d="M7 4.5v3l2 1" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Book a call
-        </a>
-      </div>
-    </form>
+    </div>
+
+    <ul class="triggers">
+      <li>Too many decisions go to the founder.</li>
+      <li>Goals aren't clear down to the frontline.</li>
+      <li>Board reporting is a struggle.</li>
+      <li>Service teams aren't using the product.</li>
+      <li>A new raise and a growing team.</li>
+      <li>Ops leadership is leaving.</li>
+    </ul>
   </div>
 </section>
 
-  
+<section class="alt" id="what-i-do">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What I do</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card c-teal">
+        <h3>An operating system for performance</h3>
+        <p>Goals, metrics, dashboards and board reporting that connect strategy to the frontline.</p>
+      </div>
+      <div class="card c-orange">
+        <h3>Technology that service teams use</h3>
+        <p>Workflow design, implementation and adoption, so your product fits how services are delivered.</p>
+      </div>
+      <div class="card c-mustard">
+        <h3>Advising</h3>
+        <p>Regular check-ins and written feedback for leaders facing decisions without obvious answers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How an engagement works</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card c-orange">
+        <h3>Diagnose</h3>
+        <p class="label">2–3 weeks · fixed fee</p>
+        <p>Interviews, data review and prioritized recommendations.</p>
+      </div>
+      <div class="card c-mustard">
+        <h3>Design and build</h3>
+        <p class="label">6–12 weeks</p>
+        <p>Operating model, workflows, metrics and roadmap.</p>
+      </div>
+      <div class="card c-teal">
+        <h3>Implement and hand off</h3>
+        <p class="label">Optional retainer · fractional COO</p>
+        <p>Ongoing support until an internal leader takes over and the team can manage the systems.</p>
+      </div>
+    </div>
+    <p class="cta-link"><a href="#contact">Start with a note →</a></p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <p>I started as a software developer.</p>
+    </div>
+    <ul class="exp">
+      <li>
+        <h3>Sparrow Healthcare</h3>
+        <p class="label">Fractional COO</p>
+        <p>Built operating systems and performance visibility. Helped design a voice AI tool with community health workers: 2.5 hours a day in potential time savings.</p>
+      </li>
+      <li>
+        <h3>Blue Shield of California</h3>
+        <p class="label">Chief of staff to the Chief Medical Officer</p>
+        <p>Built an OKR framework and performance dashboards.</p>
+      </li>
+      <li>
+        <h3>Alameda Health System</h3>
+        <p class="label">Practice Administrator</p>
+        <p>Ran FQHC clinics with a $20M budget. Led 3 clinics through an EHR rollout. Cut wait times 10%.</p>
+      </li>
+      <li>
+        <h3>Stanford Health Care</h3>
+        <p class="label">Executive Director, Strategic Projects</p>
+        <p>Interim COO for a $26M clinic system. Implemented a Lean operating system with dashboards and daily routines.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt" id="community">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Community and public health</h2>
+      <p>Much of my work serves people the health system wasn't designed for.</p>
+    </div>
+    <ul class="triggers">
+      <li><strong>Women's health NGO, Mexico City:</strong> strategy</li>
+      <li><strong>County health system:</strong> safety-net clinic operations</li>
+      <li><strong>Community-based organizations, California:</strong> Medicaid readiness</li>
+      <li><strong>Food-as-medicine startup:</strong> California market entry</li>
+      <li><strong>Senior housing nonprofit:</strong> SDOH measurement strategy</li>
+      <li><strong>Maternal and child health:</strong> First 5 Sutter County, a doula project</li>
+    </ul>
+  </div>
+</section>
+
+<section id="how-i-work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How I work</h2>
+    </div>
+    <div class="grid-4">
+      <div class="card c-teal">
+        <h3>Mostly asynchronous</h3>
+        <p>Written updates and document review between meetings.</p>
+      </div>
+      <div class="card c-mustard">
+        <h3>A few standing meetings</h3>
+        <p>Such as a weekly decision meeting, in US Eastern and Central mornings.</p>
+      </div>
+      <div class="card c-orange">
+        <h3>Transparent</h3>
+        <p>Frontline teams can understand the big picture. I make goals and tradeoffs visible at every level.</p>
+      </div>
+      <div class="card c-teal">
+        <h3>Built with the frontline</h3>
+        <p>The people delivering services help design the product from the start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Let's talk.</h2>
+      <p>Exploratory, let's see if I can help and check if we fit. No pressure.</p>
+    </div>
+    <div class="options">
+      <form class="option" action="https://formspree.io/f/mjgjbowl" method="POST">
+        <h3>Send a message</h3>
+        <label class="sr-only" for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Name" required autocomplete="name">
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Email" required autocomplete="email">
+        <label class="sr-only" for="message">Message</label>
+        <textarea id="message" name="message" rows="3" placeholder="What's on your mind?"></textarea>
+        <button class="btn btn-primary" type="submit">Send</button>
+      </form>
+      <div class="option-stack">
+        <a class="btn btn-ghost" href="mailto:rumana@rumanaadvisory.com" onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">Email</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rumanahussain" target="_blank">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://book.rumanaadvisory.com/coo-ops">Book a 30-minute call</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
-<div class="container">
-<div class="footer-inner">
-<span>© 2026 Rumana Advisory LLC</span>
-<div class="footer-links">
-<a href="https://www.linkedin.com/in/rumanahussain" target="_blank" rel="noopener noreferrer">LinkedIn</a>
- <a href="mailto:rumana@rumanaadvisory.com" onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }"
-         class="cta-link">Email</a>
-</div>
-</div>
-</div>
+  <div class="wrap">
+    <span>© 2026 Rumana Advisory LLC</span>
+    <span><a href="https://www.linkedin.com/in/rumanahussain"  target="_blank">LinkedIn</a><a href="mailto:rumana@rumanaadvisory.com" onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">Email</a></span>
+  </div>
 </footer>
-<script>
-  (function () {
-    var form = document.getElementById('ra-form');
-    var success = document.getElementById('ra-success');
-    var btn = form.querySelector('.ra-submit');
- 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      btn.classList.add('loading');
-      btn.disabled = true;
- 
-      var data = new FormData(form);
- 
-      fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' }
-      })
-        .then(function (res) {
-          if (res.ok) {
-            form.style.display = 'none';
-            success.classList.add('visible');
-          } else {
-            return res.json().then(function (json) {
-              throw new Error(json.error || 'Submission failed');
-            });
-          }
-        })
-        .catch(function (err) {
-          btn.classList.remove('loading');
-          btn.disabled = false;
-          alert('Something went wrong — please email me directly at rumana@rumanaadvisory.com');
-          console.error(err);
-        });
-    });
-  })();
-</script>
+
 </body>
 </html>
