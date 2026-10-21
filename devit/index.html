@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rumana Advisory | Fractional COO for Series A–B Healthtech</title>
-<meta name="description" content="Rumana Hussain, fractional COO for mission-driven healthtech. Making mission-driven healthtech companies easier to run: clear goals, useful metrics, and workflows that service teams use.">
+<meta name="description" content="Rumana Hussain, fractional COO for Series A–B healthtech. Making mission-driven healthtech companies easier to run: clear goals, useful metrics, and workflows that service teams use.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -33,10 +33,10 @@
     --fs-base: 15px;                     /* body text */
     --fs-sm: 13px;                       /* labels, details, nav */
 
-    --max: 1080px;
+    --max: 920px;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
   body {
     margin: 0; background: var(--cream); color: var(--ink);
     font-family: var(--sans); font-size: var(--fs-base); line-height: 1.55;
@@ -44,7 +44,8 @@
   }
   a { color: var(--green); }
   p { margin: 0; }
-  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: calc(var(--max) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
+  :root { --gutter: clamp(24px, 5vw, 64px); }
   h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); margin: 0; }
   h1 { font-size: var(--fs-xl); line-height: 1.15; }
   h2 { font-size: var(--fs-lg); line-height: 1.25; margin-bottom: 8px; }
@@ -54,7 +55,11 @@
   .soft { color: var(--ink-soft); }
 
   /* Nav */
-  .nav { background: var(--sky); }
+  /* Top bar stays in view so "Get in touch" is always one click away */
+  .nav { background: var(--sky); position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #c5d2d8; }
+  .cta-link { margin-top: 18px; font-size: var(--fs-sm); font-weight: 600; }
+  .cta-link a { color: var(--green); text-decoration: none; }
+  .cta-link a:hover { text-decoration: underline; }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
   .brand { font-family: var(--serif); font-size: var(--fs-md); color: var(--ink); text-decoration: none; }
   .nav-links { display: flex; gap: 22px; align-items: center; font-size: var(--fs-sm); font-weight: 600; }
@@ -88,7 +93,9 @@
     width: 100%; aspect-ratio: 382 / 456; display: block; border-radius: 14px;
     object-fit: cover; object-position: top; box-shadow: 0 10px 30px rgba(31,45,58,.18); background: var(--sky-deep);
   }
-  .when-head { display: grid; grid-template-columns: 1fr 360px; gap: 40px; align-items: center; margin-bottom: 24px; }
+  /* Same two columns as the trigger list, so the visual lines up with the right-hand bullets */
+  .when-head { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; align-items: center; margin-bottom: 24px; }
+  .when-head .when-visual { justify-self: start; width: 100%; max-width: 360px; }
   .when-head .section-head { margin-bottom: 0; }
   .when-visual { background: var(--sky); border-radius: 10px; padding: 10px 14px; }
   .when-visual svg { width: 100%; height: auto; display: block; }
@@ -137,20 +144,32 @@
 
   /* Contact */
   .contact { background: var(--sky); }
-  .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: start; }
-  .contact .lede { color: #34434d; }
-  .contact-alt { margin-top: 18px; display: flex; flex-direction: column; gap: 6px; font-weight: 600; }
-  .contact-alt a { color: var(--ink); }
-  form { background: var(--cream); border: 1px solid var(--line); border-radius: 10px; padding: 22px; }
-  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .field { margin-bottom: 14px; }
-  label { display: block; font-size: var(--fs-sm); font-weight: 600; margin-bottom: 4px; }
-  input, select, textarea {
-    width: 100%; font: inherit; font-size: var(--fs-base); padding: 9px 11px; border: 1px solid #cfc8ba; border-radius: 6px;
+  .contact .section-head p { color: #34434d; }
+  /* Message form on the left; email, LinkedIn and booking stacked on the right */
+  .contact .section-head { margin-left: auto; margin-right: auto; text-align: center; }
+  .options { display: grid; grid-template-columns: minmax(0, 420px) 200px; justify-content: center; gap: 32px; align-items: stretch; }
+  .option-stack .btn {
+    background: var(--cream); border: 1px solid var(--line); color: var(--ink);
+    box-shadow: 0 1px 3px rgba(31,45,58,.08);
+  }
+  .option-stack .btn:hover { background: var(--paper); border-color: var(--ink-soft); color: var(--ink); }
+  /* Three equal-width buttons, centered against the form */
+  .option-stack { display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+  .option-stack .btn { width: 200px; text-align: center; font-size: var(--fs-sm); padding: 9px 14px; }
+  .option {
+    display: flex; flex-direction: column; gap: 8px; align-items: flex-start;
+    background: var(--cream); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
+  }
+  .option h3 { margin-bottom: 2px; }
+  .option p { color: var(--ink-soft); font-size: var(--fs-sm); flex: 1; }
+  .option .btn { font-size: var(--fs-sm); padding: 6px 14px; margin-top: auto; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  input, textarea {
+    width: 100%; font: inherit; font-size: var(--fs-sm); padding: 7px 10px; border: 1px solid #cfc8ba; border-radius: 6px;
     background: var(--paper); color: var(--ink);
   }
-  input:focus, select:focus, textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
-  textarea { min-height: 90px; resize: vertical; }
+  input:focus, textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+  textarea { resize: vertical; }
   form .btn { border: none; cursor: pointer; }
 
   footer { background: var(--ink); color: #b9c6cc; font-size: var(--fs-sm); padding: 20px 0; }
@@ -158,8 +177,9 @@
   footer a { color: #e6ecee; text-decoration: none; margin-left: 20px; }
 
   @media (max-width: 860px) {
-    .hero-grid, .contact-grid, .grid-3, .grid-4, .exp, .triggers { grid-template-columns: 1fr; }
+    .hero-grid, .options, .grid-3, .grid-4, .exp, .triggers { grid-template-columns: 1fr; }
     .hero-visual { max-width: 220px; justify-self: start; grid-row: 1; }
+    .option-stack { align-items: center; }
     .hero-grid { gap: 24px; }
     .when-head { grid-template-columns: 1fr; gap: 20px; }
     .when-visual { max-width: 360px; }
@@ -170,9 +190,8 @@
   }
   @media (max-width: 560px) {
     :root { --fs-lg: 21px; --fs-md: 16px; }
-    .wrap { padding: 0 16px; }
+    :root { --gutter: 16px; }
     .hide-sm { display: none; }
-    .row { grid-template-columns: 1fr; }
     footer a { margin: 0 20px 0 0; }
   }
 </style>
@@ -317,6 +336,7 @@
         <p>Ongoing support until an internal leader takes over and the team can manage the systems.</p>
       </div>
     </div>
+    <p class="cta-link"><a href="#contact">Start with a note →</a></p>
   </div>
 </section>
 
@@ -395,55 +415,35 @@
 </section>
 
 <section class="contact" id="contact">
-  <div class="wrap contact-grid">
-    <div>
+  <div class="wrap">
+    <div class="section-head">
       <h2>Let's talk.</h2>
-      <p class="lede">Start with a 30-minute call.</p>
-      <div class="contact-alt">
-        <a href="https://book.rumanaadvisory.com/coo-ops">Book a call →</a>
-        <a href="mailto:rumana@rumanaadvisory.com">rumana@rumanaadvisory.com</a>
-        <a href="https://www.linkedin.com/in/rumanahussain">LinkedIn</a>
+      <p>Exploratory, let's see if I can help and check if we fit. No pressure.</p>
+    </div>
+    <div class="options">
+      <form class="option" action="https://formspree.io/f/mjgjbowl" method="POST">
+        <h3>Send a message</h3>
+        <label class="sr-only" for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Name" required autocomplete="name">
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Email" required autocomplete="email">
+        <label class="sr-only" for="message">Message</label>
+        <textarea id="message" name="message" rows="3" placeholder="What's on your mind?"></textarea>
+        <button class="btn btn-primary" type="submit">Send</button>
+      </form>
+      <div class="option-stack">
+        <a class="btn btn-ghost" href="mailto:rumana@rumanaadvisory.com" onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">Email</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rumanahussain" target="_blank">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://book.rumanaadvisory.com/coo-ops">Book a 30-minute call</a>
       </div>
     </div>
-    <form action="https://formspree.io/f/mjgjbowl" method="POST">
-      <div class="row">
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" required autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required autocomplete="email">
-        </div>
-      </div>
-      <div class="field">
-        <label for="org">Organization</label>
-        <input id="org" name="organization" type="text">
-      </div>
-      <div class="field">
-        <label for="interest">What brings you here?</label>
-        <select id="interest" name="interest">
-          <option value="" disabled selected>Select one</option>
-          <option>Goals, metrics and board reporting</option>
-          <option>Technology that service teams use</option>
-          <option>Fractional COO</option>
-          <option>Advising</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="message">Anything you'd like me to know</label>
-        <textarea id="message" name="message"></textarea>
-      </div>
-      <button class="btn btn-primary" type="submit">Send message →</button>
-    </form>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <span>© 2026 Rumana Advisory LLC</span>
-    <span><a href="https://www.linkedin.com/in/rumanahussain">LinkedIn</a><a href="mailto:rumana@rumanaadvisory.com">Email</a></span>
+    <span><a href="https://www.linkedin.com/in/rumanahussain"  target="_blank">LinkedIn</a><a href="mailto:rumana@rumanaadvisory.com" onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">Email</a></span>
   </div>
 </footer>
 
