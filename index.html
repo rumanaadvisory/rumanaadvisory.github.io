@@ -1,350 +1,450 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rumana Hussain – Fractional COO Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rumana Advisory | Fractional COO for Series A–B Healthtech</title>
+<meta name="description" content="Rumana Hussain, fractional COO for Series A–B healthtech. Making mission-driven healthtech companies easier to run: clear goals, useful metrics, and workflows that service teams use.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --navy:  #0C132F;
-    --teal:  #115156;
-    --teal2: #1a6e74;
-    --teal3: #1f8088;
-    --warm:  #C4613A;
-    --cream: #F5F1EC;
-    --light: #EDE8E1;
-    --mid:   #96816E;
-    --text:  #2A2A2A;
-    --muted: #7a6a5e;
+    --sky: #d6dfe3;
+    --sky-deep: #c5d2d8;
+    --cream: #faf8f4;
+    --paper: #ffffff;
+    --line: #e2dccf;
+    --ink: #1f2d3a;
+    --ink-soft: #4a5862;
+    --orange: #c8643a;
+    --mustard: #e2b155;
+    --teal: #3a8a7a;
+    --green: #2a7a64;
+
+    /* Two fonts: Georgia (the banner serif) for headings, Inter for text */
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    /* Five sizes */
+    --fs-xl: clamp(28px, 3.4vw, 36px);  /* page headline */
+    --fs-lg: 23px;                       /* section headings */
+    --fs-md: 17px;                       /* card and item headings, quote */
+    --fs-base: 15px;                     /* body text */
+    --fs-sm: 13px;                       /* labels, details, nav */
+
+    --max: 920px;
   }
-
-  body { font: 400 14px/1.65 'Lato', sans-serif; background: var(--cream); color: var(--text); }
-
-  /* ── HEADER ── */
-  header { background: var(--cream); border-bottom: 3px solid var(--warm); }
-
-  .header-inner {
-    max-width: 900px; margin: 0 auto;
-    padding: 36px 48px 32px;
-    display: grid; grid-template-columns: 1fr 180px;
-    gap: 40px; align-items: center;
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    margin: 0; background: var(--cream); color: var(--ink);
+    font-family: var(--sans); font-size: var(--fs-base); line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
   }
+  a { color: var(--green); }
+  p { margin: 0; }
+  .wrap { max-width: calc(var(--max) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
+  :root { --gutter: clamp(24px, 5vw, 64px); }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); margin: 0; }
+  h1 { font-size: var(--fs-xl); line-height: 1.15; }
+  h2 { font-size: var(--fs-lg); line-height: 1.25; margin-bottom: 8px; }
+  h3 { font-size: var(--fs-md); line-height: 1.3; margin-bottom: 6px; }
+  .small, .label { font-size: var(--fs-sm); }
+  .label { font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
+  .soft { color: var(--ink-soft); }
 
-  .eyebrow { font-size: 12px; color: var(--mid); margin-bottom: 8px; }
+  /* Nav */
+  /* Top bar stays in view so "Get in touch" is always one click away */
+  .nav { background: var(--sky); position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #c5d2d8; }
+  .cta-link { margin-top: 18px; font-size: var(--fs-sm); font-weight: 600; }
+  .cta-link a { color: var(--green); text-decoration: none; }
+  .cta-link a:hover { text-decoration: underline; }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { font-family: var(--serif); font-size: var(--fs-md); color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 22px; align-items: center; font-size: var(--fs-sm); font-weight: 600; }
+  .nav-links a { color: var(--ink); text-decoration: none; }
+  .nav-links a:hover { color: var(--green); }
 
-  h1 { font-size: 38px; font-weight: 700; color: var(--navy); line-height: 1.1; margin-bottom: 8px; }
-
-  .tagline { font-size: 15px; font-weight: 300; color: var(--muted); margin-bottom: 18px; }
-
-  .pedigree { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 5px; color: var(--muted); }
-
-  .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--teal); opacity: 0.7; flex-shrink: 0; }
-
-  .header-photo img { width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: center top; border-radius: 4px; display: block; }
-
-  .pedigree-mobile { display: none; }
-
-  @media (max-width: 768px) {
-    .header-inner { grid-template-columns: 1fr; padding: 24px 20px; gap: 20px; }
-    .header-photo { max-width: 160px; }
-    .pedigree-desktop { display: none !important; }
-    .pedigree-mobile { display: flex; }
+  /* Buttons */
+  .btn {
+    display: inline-block; padding: 11px 20px; border-radius: 6px; font-weight: 600; font-size: var(--fs-base);
+    text-decoration: none; border: 1.5px solid var(--ink); transition: background .15s, color .15s; font-family: var(--sans);
   }
+  .btn-primary { background: var(--ink); color: var(--cream); }
+  .btn-primary:hover { background: var(--green); border-color: var(--green); }
+  .btn-ghost { color: var(--ink); background: transparent; }
+  .btn-ghost:hover { background: var(--ink); color: var(--cream); }
+  .nav .btn { padding: 6px 14px; font-size: var(--fs-sm); }
 
-  /* ── TESTIMONIAL ── */
-  .testimonial-bar { background: var(--navy); padding: 16px 0; }
-
-  .testimonial-inner { max-width: 900px; margin: 0 auto; padding: 0 48px; }
-
-  .testimonial-text { font-weight: 400; color: rgba(255,255,255,0.85); }
-
-  .testimonial-attr { font-size: 12px; font-weight: 700; color: var(--warm); margin-top: 6px; }
-
-  @media (max-width: 768px) { .testimonial-inner { padding: 0 20px; } }
-
-  /* ── MAIN ── */
-  main { max-width: 900px; margin: 0 auto; padding: 28px 48px 32px; }
-
-  @media (max-width: 768px) { main { padding: 24px 20px; } }
-
-  /* ── OPENING ── */
-  .opening {
-    border-left: 3px solid var(--teal);
-    padding: 4px 0 4px 20px;
-    margin-bottom: 32px;
-    color: var(--muted);
+  /* Hero */
+  .hero { background: var(--sky); padding: 36px 0 52px; }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; align-items: center; }
+  .hero .label { margin-bottom: 12px; }
+  .hero h1 { margin-bottom: 16px; }
+  .hero .lede { color: #34434d; max-width: 560px; margin-bottom: 22px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; max-width: 600px; }
+  .pills li {
+    font-size: var(--fs-sm); color: var(--ink); background: rgba(255,255,255,.55);
+    border: 1px solid #bccad0; border-radius: 999px; padding: 4px 12px;
   }
-
-  .opening p + p { margin-top: 12px; }
-
-  .opening strong { color: var(--navy); font-weight: 700; }
-
-  /* ── SECTION HEADING ── */
-  .section-heading { font-size: 14px; font-weight: 700; color: var(--warm); margin-bottom: 16px; }
-
-  /* ── CARDS ── */
-  .offerings { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
-
-  .card {
-    background: #fff; border-radius: 10px; border: 1px solid rgba(0,0,0,0.07);
-    overflow: hidden; display: grid; grid-template-columns: 200px 1fr;
-    transition: box-shadow 0.2s ease;
+  .hero-visual { position: relative; max-width: 280px; justify-self: end; width: 100%; }
+  .portrait {
+    width: 100%; aspect-ratio: 382 / 456; display: block; border-radius: 14px;
+    object-fit: cover; object-position: top; box-shadow: 0 10px 30px rgba(31,45,58,.18); background: var(--sky-deep);
   }
+  /* Same two columns as the trigger list, so the visual lines up with the right-hand bullets */
+  .when-head { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; align-items: center; margin-bottom: 24px; }
+  .when-head .when-visual { justify-self: start; width: 100%; max-width: 360px; }
+  .when-head .section-head { margin-bottom: 0; }
+  .when-visual { background: var(--sky); border-radius: 10px; padding: 10px 14px; }
+  .when-visual svg { width: 100%; height: auto; display: block; }
 
-  .card:hover { box-shadow: 0 6px 24px rgba(12,19,47,0.08); }
+  /* Sections */
+  section { padding: 52px 0; }
+  /* One background below the hero; sections separated by a thin rule */
+  section + section, .quote + section, section + .quote { border-top: 1px solid var(--line); }
+  .section-head { max-width: 700px; margin-bottom: 20px; }
+  .section-head p { color: var(--ink-soft); }
 
-  .card-left {
-    background: var(--teal); padding: 20px 18px;
-    display: flex; flex-direction: column; justify-content: space-between;
+  /* Plain lists */
+  .triggers strong { font-weight: 600; color: var(--ink); }
+  .triggers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 40px; list-style: none; padding: 0; margin: 0; color: var(--ink-soft); }
+  .triggers li { position: relative; padding-left: 22px; }
+  .triggers li::before {
+    content: ""; position: absolute; left: 0; top: 6px; width: 10px; height: 10px; border-radius: 2px;
+    background: var(--c, var(--teal)); transform: rotate(-12deg);
   }
+  .triggers li:nth-child(3n+1) { --c: var(--orange); }
+  .triggers li:nth-child(3n+2) { --c: var(--mustard); }
 
-  .card-left.t2 { background: var(--teal2); }
-  .card-left.t3 { background: var(--teal3); }
-
-  .card-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-
-  .card-sub { font-weight: 300; color: rgba(255,255,255,0.7); }
-
-  .card-price { margin-top: 20px; }
-
-  .price-meta { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 2px; }
-
-  .price-val { font-weight: 700; color: #fff; }
-
-  .price-note { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5); margin-top: 2px; }
-
-  .card-right { padding: 18px 22px 16px; }
-
-  .card-label { font-size: 14px; font-weight: 700; color: var(--warm); margin-bottom: 6px; }
-
-  .card-when { color: var(--muted); margin-bottom: 14px; }
-
-  .card-label-2 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-
-  ul.items { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-
-  ul.items li { padding-left: 14px; position: relative; }
-
-  ul.items li::before { content: '–'; position: absolute; left: 0; color: var(--warm); }
-
-  .card-foot { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--light); font-size: 12px; color: var(--muted); }
-
-  @media (max-width: 768px) {
-    .card { grid-template-columns: 1fr; }
-    .card-left, .card-right { padding: 18px; }
+  /* Columns of text: no boxes */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .card p { color: var(--ink-soft); }
+  /* Banner colors appear once, on the engagement steps */
+  #how .grid-3, #what-i-do .grid-3, #how-i-work .grid-4 { gap: 18px; }
+  #how .card, #what-i-do .card, #how-i-work .card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
   }
+  #how .card { border-top: 4px solid var(--bar); }
+  .c-orange { --bar: var(--orange); }
+  .c-mustard { --bar: var(--mustard); }
+  .c-teal { --bar: var(--teal); }
 
-  /* ── CTA ── */
-  .cta {
-    background: var(--light); border-radius: 8px;
-    padding: 24px 28px; display: flex;
-    justify-content: space-between; align-items: center; gap: 24px;
+  /* Quote */
+  .quote { padding: 32px 0; background: var(--paper); }
+  .quote blockquote { margin: 0 auto; max-width: 720px; text-align: center; }
+  .quote p { font-family: var(--serif); font-size: var(--fs-md); line-height: 1.5; margin-bottom: 12px; }
+  .quote cite { font-style: normal; font-size: var(--fs-sm); color: var(--ink-soft); }
+
+  /* Experience */
+  .exp { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 40px; }
+  .exp p { color: var(--ink-soft); }
+
+  /* Contact */
+  .contact { background: var(--sky); }
+  .contact .section-head p { color: #34434d; }
+  /* Message form on the left; email, LinkedIn and booking stacked on the right */
+  .contact .section-head { margin-left: auto; margin-right: auto; text-align: center; }
+  .options { display: grid; grid-template-columns: minmax(0, 420px) 200px; justify-content: center; gap: 32px; align-items: stretch; }
+  .option-stack .btn {
+    background: var(--cream); border: 1px solid var(--line); color: var(--ink);
+    box-shadow: 0 1px 3px rgba(31,45,58,.08);
   }
-
-  .cta h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-
-  .cta p { color: var(--muted); }
-
-  .cta-links { display: flex; flex-direction: column; gap: 8px; min-width: 190px; flex-shrink: 0; }
-
-  .cta-link {
-    display: flex; align-items: center; gap: 8px;
-    font-weight: 700; color: var(--navy); text-decoration: none;
-    padding: 8px 12px; background: white;
-    border-radius: 6px; border: 1px solid rgba(0,0,0,0.08);
-    transition: all 0.2s ease;
+  .option-stack .btn:hover { background: var(--paper); border-color: var(--ink-soft); color: var(--ink); }
+  /* Three equal-width buttons, centered against the form */
+  .option-stack { display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+  .option-stack .btn { width: 200px; text-align: center; font-size: var(--fs-sm); padding: 9px 14px; }
+  .option {
+    display: flex; flex-direction: column; gap: 8px; align-items: flex-start;
+    background: var(--cream); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
   }
-
-  .cta-link:hover { background: var(--teal); color: white; border-color: var(--teal); }
-  .cta-link:hover .icon { background: rgba(255,255,255,0.15); }
-
-  .icon {
-    width: 26px; height: 26px; border-radius: 5px; background: var(--navy);
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    transition: background 0.2s ease;
+  .option h3 { margin-bottom: 2px; }
+  .option p { color: var(--ink-soft); font-size: var(--fs-sm); flex: 1; }
+  .option .btn { font-size: var(--fs-sm); padding: 6px 14px; margin-top: auto; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  input, textarea {
+    width: 100%; font: inherit; font-size: var(--fs-sm); padding: 7px 10px; border: 1px solid #cfc8ba; border-radius: 6px;
+    background: var(--paper); color: var(--ink);
   }
+  input:focus, textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+  textarea { resize: vertical; }
+  form .btn { border: none; cursor: pointer; }
 
-  .icon svg { width: 11px; height: 11px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  footer { background: var(--ink); color: #b9c6cc; font-size: var(--fs-sm); padding: 20px 0; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a { color: #e6ecee; text-decoration: none; margin-left: 20px; }
 
-  @media (max-width: 768px) {
-    .cta { flex-direction: column; padding: 20px; }
-    .cta-links { width: 100%; }
+  @media (max-width: 860px) {
+    .hero-grid, .options, .grid-3, .grid-4, .exp, .triggers { grid-template-columns: 1fr; }
+    .hero-visual { max-width: 220px; justify-self: start; grid-row: 1; }
+    .option-stack { align-items: center; }
+    .hero-grid { gap: 24px; }
+    .when-head { grid-template-columns: 1fr; gap: 20px; }
+    .when-visual { max-width: 360px; }
+    section { padding: 44px 0; }
   }
-
-  /* ── FOOTER ── */
-  footer { background: var(--navy); padding: 14px 48px; display: flex; justify-content: space-between; align-items: center; }
-
-  .footer-l { font-size: 12px; font-weight: 700; color: var(--mid); }
-  .footer-r { font-size: 12px; color: var(--warm); }
-
-  @media (max-width: 768px) { footer { flex-direction: column; align-items: flex-start; gap: 6px; padding: 18px 20px; } }
-
-  @media print {
-    body { background: white; }
-    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-    @page { margin: 0.4in; size: letter portrait; }
+  @media (min-width: 561px) and (max-width: 860px) {
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    :root { --fs-lg: 21px; --fs-md: 16px; }
+    :root { --gutter: 16px; }
+    .hide-sm { display: none; }
+    footer a { margin: 0 20px 0 0; }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <div>
-      <p class="eyebrow">Fractional COO Services</p>
-      <h1>Rumana Hussain</h1>
-      <p class="tagline">Operational leadership for healthcare organizations at an inflection point.</p>
-      <div class="pedigree pedigree-desktop">
-        <span>Stanford Health Care</span><span class="dot"></span>
-        <span>Blue Shield of California</span><span class="dot"></span>
-        <span>Alameda Health System</span>
-      </div>
-      <div class="pedigree pedigree-desktop" style="margin-top:4px;">
-        <span>MBA/MPH, UC Berkeley</span><span class="dot"></span>
-        <span>BS Computer Science, Washington University in St. Louis</span>
-      </div>
-      <div class="pedigree pedigree-mobile">
-        <span>Stanford</span><span class="dot"></span>
-        <span>Blue Shield</span><span class="dot"></span>
-        <span>MBA/MPH, UC Berkeley</span>
-      </div>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Rumana Advisory</a>
+    <div class="nav-links">
+      <a class="hide-sm" href="#what-i-do">What I do</a>
+      <a class="hide-sm" href="#experience">Experience</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
     </div>
-    <div class="header-photo">
-      <img src="headshot.png" alt="Rumana Hussain">
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="label">Rumana Hussain · Fractional COO for Series A–B healthtech</p>
+      <h1>Making mission-driven healthtech companies easier to run</h1>
+      <p class="lede">Clear goals, useful metrics, and workflows that service teams use, for startups serving people the health system wasn't designed for.</p>
+      <ul class="pills" aria-label="Experience and education">
+        <li>Stanford Health Care</li>
+        <li>Blue Shield of California</li>
+        <li>Alameda Health System</li>
+        <li>MBA/MPH, UC Berkeley</li>
+        <li>BS Computer Science, Washington University in St. Louis</li>
+      </ul>
+    </div>
+    <div class="hero-visual">
+      <img class="portrait" src="https://rumanaadvisory.com/headshot.png" alt="Rumana Hussain">
     </div>
   </div>
 </header>
 
-<div class="testimonial-bar">
-  <div class="testimonial-inner">
-    <p class="testimonial-text">Rumana advanced our operational maturity 12–18 months ahead of where companies typically are at our stage. She has been a game-changer in our transition to repeatable, scalable operations.</p>
-    <p class="testimonial-attr">— Kunal Sethy, Founder & CEO, Sparrow Healthcare</p>
+<div class="quote">
+  <div class="wrap">
+    <blockquote>
+      <p>"Rumana advanced our operational maturity 12–18 months ahead of where companies typically are at our stage. She has been a game-changer in our transition to repeatable, scalable operations."</p>
+      <cite>Kunal Sethy, Founder &amp; CEO, Sparrow Healthcare</cite>
+    </blockquote>
   </div>
 </div>
 
-<main>
+<section id="when">
+  <div class="wrap">
+    <div class="when-head">
+      <div class="section-head">
+        <h2>When teams bring me in</h2>
+        <p>Usually during a transition, a new launch, or as the first person in a role.</p>
+      </div>
+      <div class="when-visual">
+      <!-- Banner motif: scattered priorities become a clear list, then a metric that reaches its target -->
+      <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g>
+          <rect x="18" y="58" width="30" height="24" rx="2" fill="#e2b155" transform="rotate(-22 33 70)"/>
+          <rect x="74" y="30" width="30" height="24" rx="2" fill="#c8643a" transform="rotate(14 89 42)"/>
+          <rect x="112" y="88" width="30" height="24" rx="2" fill="#3a8a7a" transform="rotate(-6 127 100)"/>
+          <rect x="40" y="168" width="28" height="24" rx="2" fill="#3a8a7a" transform="rotate(32 54 180)"/>
+          <rect x="120" y="150" width="30" height="24" rx="2" fill="#c8643a" transform="rotate(9 135 162)"/>
+          <rect x="84" y="208" width="30" height="24" rx="2" fill="#e2b155" transform="rotate(-14 99 220)"/>
+          <rect x="156" y="118" width="28" height="24" rx="2" fill="#e2b155"/>
+        </g>
+        <path d="M194 130 h30" stroke="#7a4a32" stroke-width="2" fill="none"/>
+        <path d="M218 124 l7 6 -7 6" stroke="#7a4a32" stroke-width="2" fill="none"/>
+        <rect x="238" y="40" width="270" height="190" rx="10" fill="#faf8f4" stroke="#d8d0c0" stroke-width="1.5"/>
+        <g>
+          <rect x="256" y="74" width="78" height="26" rx="4" fill="#fff" stroke="#e2dccf"/>
+          <rect x="256" y="74" width="7" height="26" rx="2" fill="#c8643a"/>
+          <rect x="272" y="84" width="48" height="5" rx="2.5" fill="#ddd5c6"/>
+          <rect x="256" y="114" width="78" height="26" rx="4" fill="#fff" stroke="#e2dccf"/>
+          <rect x="256" y="114" width="7" height="26" rx="2" fill="#e2b155"/>
+          <rect x="272" y="124" width="38" height="5" rx="2.5" fill="#ddd5c6"/>
+          <rect x="256" y="154" width="78" height="26" rx="4" fill="#fff" stroke="#e2dccf"/>
+          <rect x="256" y="154" width="7" height="26" rx="2" fill="#3a8a7a"/>
+          <rect x="272" y="164" width="44" height="5" rx="2.5" fill="#ddd5c6"/>
+        </g>
+        <path d="M344 127 h22" stroke="#2b2b2b" stroke-width="1.6" fill="none"/>
+        <path d="M361 122 l6 5 -6 5" stroke="#2b2b2b" stroke-width="1.6" fill="none"/>
+        <path d="M380 62 v140 h112" stroke="#c9c0ae" stroke-width="1.4" fill="none"/>
+        <path d="M380 80 h112" stroke="#c8643a" stroke-width="1.6" stroke-dasharray="4 4" fill="none"/>
+        <path d="M386 190 L420 178 L486 82" stroke="#2a7a64" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="486" cy="82" r="6" fill="#2a7a64"/>
+      </svg>
+      </div>
+    </div>
 
-  <div class="opening">
-    <p>Healthcare is genuinely complex and constantly evolving which pulls you towards instability and reactive mode. I've worked inside health systems, run clinics, sat on the payer side, and spent time in early-stage health tech. I've seen enough of the system to know where the friction lives, and how to build operations in that reality.</p>
-    <p>I work with founders and leaders who are ready to build something that lasts.</p>
+    <ul class="triggers">
+      <li>Too many decisions go to the founder.</li>
+      <li>Goals aren't clear down to the frontline.</li>
+      <li>Board reporting is a struggle.</li>
+      <li>Service teams aren't using the product.</li>
+      <li>A new raise and a growing team.</li>
+      <li>Ops leadership is leaving.</li>
+    </ul>
   </div>
+</section>
 
-  <p class="section-heading">How I work with you</p>
-
-  <div class="offerings">
-
-    <div class="card">
-      <div class="card-left">
-        <div>
-          <p class="card-title">Fractional COO</p>
-          <p class="card-sub">You need someone in the work, not just advising on it.</p>
-        </div>
-        <div class="card-price">
-          <p class="price-meta">Engagement</p>
-          <p class="price-val">3-month minimum</p>
-          <p class="price-note">Scope and investment scale with your needs</p>
-        </div>
-      </div>
-      <div class="card-right">
-        <p class="card-label">Best when</p>
-        <p class="card-when">The team is holding things together through effort and goodwill, and you know that's not a strategy. You're ready to build something more durable — real processes, real ownership, real visibility into what's happening.</p>
-        <p class="card-label-2">What you get</p>
-        <ul class="items">
-          <li>Performance management systems — KPIs, dashboards, operating reviews, leadership rhythms</li>
-          <li>Cross-functional workflow optimization and process design</li>
-          <li>Workforce development — care teams, CHWs, team lead coaching</li>
-          <li>Clinical-product alignment and operational bridge-building</li>
-        </ul>
-        <p class="card-foot">Typically 3–6 months · 5–20 hrs/week depending on scope</p>
-      </div>
+<section class="alt" id="what-i-do">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What I do</h2>
     </div>
-
-    <div class="card">
-      <div class="card-left t2">
-        <div>
-          <p class="card-title">Focused Operations Project</p>
-          <p class="card-sub">One problem, scoped cleanly, solved completely.</p>
-        </div>
-        <div class="card-price">
-          <p class="price-meta">Engagement</p>
-          <p class="price-val">Scoped after discovery</p>
-          <p class="price-note">Fixed fee</p>
-        </div>
+    <div class="grid-3">
+      <div class="card c-teal">
+        <h3>An operating system for performance</h3>
+        <p>Goals, metrics, dashboards and board reporting that connect strategy to the frontline.</p>
       </div>
-      <div class="card-right">
-        <p class="card-label">Best when</p>
-        <p class="card-when">You know exactly what needs fixing, or you need a specific system built and handed off. You want a defined deliverable — clear start, clear end, clean transition to your team.</p>
-        <p class="card-label-2">Example projects</p>
-        <ul class="items">
-          <li>Performance dashboard and KPI system — built and handed off</li>
-          <li>Product-operations bridge — translating clinical reality into product requirements</li>
-          <li>Capacity modeling and real-time visibility system</li>
-          <li>Process design and implementation, including staff training and handoff</li>
-        </ul>
-        <p class="card-foot">Fixed fee · clear deliverable and handoff</p>
+      <div class="card c-orange">
+        <h3>Technology that service teams use</h3>
+        <p>Workflow design, implementation and adoption, so your product fits how services are delivered.</p>
       </div>
-    </div>
-
-    <div class="card">
-      <div class="card-left t3">
-        <div>
-          <p class="card-title">Strategic Advisory Retainer</p>
-          <p class="card-sub">A senior ops brain in your corner — without the implementation.</p>
-        </div>
-        <div class="card-price">
-          <p class="price-meta">Engagement</p>
-          <p class="price-val">Flexible commitment</p>
-          <p class="price-note">Async-first · limited live calls</p>
-        </div>
+      <div class="card c-mustard">
+        <h3>Advising</h3>
+        <p>Regular check-ins and written feedback for leaders facing decisions without obvious answers.</p>
       </div>
-      <div class="card-right">
-        <p class="card-label">Best when</p>
-        <p class="card-when">You have capable people running the day-to-day. What you need is a thinking partner for the decisions that don't have obvious answers — someone who knows the healthcare system well enough to pressure-test your assumptions and tell you what you might be missing.</p>
-        <p class="card-label-2">What you get</p>
-        <ul class="items">
-          <li>Regular strategic check-ins (cadence agreed at start)</li>
-          <li>Async support — written feedback, document review</li>
-          <li>Sounding board for leadership and organizational decisions</li>
-          <li>Healthcare-specific expertise on demand — care models, workforce, how health systems and payers work</li>
-        </ul>
-        <p class="card-foot">Async-first · flexible commitment · not a replacement for embedded ops leadership</p>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="cta">
-    <div>
-      <h3>Let's talk about where you are.</h3>
-      <p>A 30-minute discovery call is the best place to start — I'll ask about your current situation and you can ask me anything. No pitch, no pressure.</p>
-    </div>
-    <div class="cta-links">
-      <a href="mailto:rumana@rumanaadvisory.com"
-         onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }"
-         class="cta-link">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        Send me an email
-      </a>
-      <a href="https://book.rumanaadvisory.com/coo-ops" target="_blank" rel="noopener noreferrer" class="cta-link">
-        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        Book a discovery call
-      </a>
-      <a href="https://www.linkedin.com/in/rumanahussain/" target="_blank" rel="noopener noreferrer" class="cta-link">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
-        Find me on LinkedIn
-      </a>
     </div>
   </div>
+</section>
 
-</main>
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How an engagement works</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card c-orange">
+        <h3>Diagnose</h3>
+        <p class="label">2–3 weeks · fixed fee</p>
+        <p>Interviews, data review and prioritized recommendations.</p>
+      </div>
+      <div class="card c-mustard">
+        <h3>Design and build</h3>
+        <p class="label">6–12 weeks</p>
+        <p>Operating model, workflows, metrics and roadmap.</p>
+      </div>
+      <div class="card c-teal">
+        <h3>Implement and hand off</h3>
+        <p class="label">Optional retainer · fractional COO</p>
+        <p>Ongoing support until an internal leader takes over and the team can manage the systems.</p>
+      </div>
+    </div>
+    <p class="cta-link"><a href="#contact">Start with a note →</a></p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <p>I started as a software developer.</p>
+    </div>
+    <ul class="exp">
+      <li>
+        <h3>Sparrow Healthcare</h3>
+        <p class="label">Fractional COO</p>
+        <p>Built operating systems and performance visibility. Helped design a voice AI tool with community health workers: 2.5 hours a day in potential time savings.</p>
+      </li>
+      <li>
+        <h3>Blue Shield of California</h3>
+        <p class="label">Chief of staff to the Chief Medical Officer</p>
+        <p>Built an OKR framework and performance dashboards.</p>
+      </li>
+      <li>
+        <h3>Alameda Health System</h3>
+        <p class="label">Practice Administrator</p>
+        <p>Ran FQHC clinics with a $20M budget. Led 3 clinics through an EHR rollout. Cut wait times 10%.</p>
+      </li>
+      <li>
+        <h3>Stanford Health Care</h3>
+        <p class="label">Executive Director, Strategic Projects</p>
+        <p>Interim COO for a $26M clinic system. Implemented a Lean operating system with dashboards and daily routines.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt" id="community">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Community and public health</h2>
+      <p>Much of my work serves people the health system wasn't designed for.</p>
+    </div>
+    <ul class="triggers">
+      <li><strong>Women's health NGO, Mexico City:</strong> strategy</li>
+      <li><strong>County health system:</strong> safety-net clinic operations</li>
+      <li><strong>Community-based organizations, California:</strong> Medicaid readiness</li>
+      <li><strong>Food-as-medicine startup:</strong> California market entry</li>
+      <li><strong>Senior housing nonprofit:</strong> SDOH measurement strategy</li>
+      <li><strong>Maternal and child health:</strong> First 5 Sutter County, a doula project</li>
+    </ul>
+  </div>
+</section>
+
+<section id="how-i-work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How I work</h2>
+    </div>
+    <div class="grid-4">
+      <div class="card c-teal">
+        <h3>Mostly asynchronous</h3>
+        <p>Written updates and document review between meetings.</p>
+      </div>
+      <div class="card c-mustard">
+        <h3>A few standing meetings</h3>
+        <p>Such as a weekly decision meeting, in US Eastern and Central mornings.</p>
+      </div>
+      <div class="card c-orange">
+        <h3>Transparent</h3>
+        <p>Frontline teams can understand the big picture. I make goals and tradeoffs visible at every level.</p>
+      </div>
+      <div class="card c-teal">
+        <h3>Built with the frontline</h3>
+        <p>The people delivering services help design the product from the start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Let's talk.</h2>
+      <p>Exploratory, let's see if I can help and check if we fit. No pressure.</p>
+    </div>
+    <div class="options">
+      <form class="option" action="https://formspree.io/f/mjgjbowl" method="POST">
+        <h3>Send a message</h3>
+        <label class="sr-only" for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Name" required autocomplete="name">
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Email" required autocomplete="email">
+        <label class="sr-only" for="message">Message</label>
+        <textarea id="message" name="message" rows="3" placeholder="What's on your mind?"></textarea>
+        <button class="btn btn-primary" type="submit">Send</button>
+      </form>
+      <div class="option-stack">
+        <a class="btn btn-ghost" href="mailto:rumana@rumanaadvisory.com" onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">Email</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rumanahussain" target="_blank">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://book.rumanaadvisory.com/coo-ops">Book a 30-minute call</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <span class="footer-l">Rumana Advisory LLC</span>
-  <span class="footer-r">rumanaadvisory.com</span>
+  <div class="wrap">
+    <span>© 2026 Rumana Advisory LLC</span>
+    <span><a href="https://www.linkedin.com/in/rumanahussain"  target="_blank">LinkedIn</a><a href="mailto:rumana@rumanaadvisory.com" onclick="if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) { event.preventDefault(); navigator.clipboard.writeText('rumana@rumanaadvisory.com').then(() => { alert('Email copied to clipboard!'); }).catch(() => { alert('Could not copy. Email: rumana@rumanaadvisory.com'); }); return false; }">Email</a></span>
+  </div>
 </footer>
 
 </body>
