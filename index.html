@@ -82,7 +82,7 @@
   .hero { background: var(--sky); padding: 36px 0 52px; }
   .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; align-items: center; }
   .hero .label { margin-bottom: 12px; }
-  .hero h1 { margin-bottom: 16px; }
+  .hero h1 { margin-bottom: 16px; text-wrap: balance; }
   .hero .lede { color: #34434d; max-width: 560px; margin-bottom: 22px; }
   .pills { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; max-width: 600px; }
   .pills li {
@@ -122,9 +122,12 @@
   /* Columns of text: no boxes */
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
   .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
   .card p { color: var(--ink-soft); }
   /* Banner colors appear once, on the engagement steps */
-  #how .grid-3, #what-i-do .grid-3, #how-i-work .grid-4 { gap: 18px; }
+  #how .grid-3, #what-i-do .grid-3 { gap: 18px; }
+  /* Same column gap as the Experience list, so the columns line up */
+  #how-i-work .grid-2 { gap: 18px 40px; }
   #how .card, #what-i-do .card, #how-i-work .card {
     background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
   }
@@ -135,7 +138,7 @@
 
   /* Quote */
   .quote { padding: 32px 0; background: var(--paper); }
-  .quote blockquote { margin: 0 auto; max-width: 720px; text-align: center; }
+  .quote blockquote { margin: 0 auto; max-width: var(--max); text-align: center; }
   .quote p { font-family: var(--serif); font-size: var(--fs-md); line-height: 1.5; margin-bottom: 12px; }
   .quote cite { font-style: normal; font-size: var(--fs-sm); color: var(--ink-soft); }
 
@@ -178,7 +181,7 @@
   footer a { color: #e6ecee; text-decoration: none; margin-left: 20px; }
 
   @media (max-width: 860px) {
-    .hero-grid, .options, .grid-3, .grid-4, .exp, .triggers { grid-template-columns: 1fr; }
+    .hero-grid, .options, .grid-2, .grid-3, .grid-4, .exp, .triggers { grid-template-columns: 1fr; }
     .hero-visual { max-width: 220px; justify-self: start; grid-row: 1; }
     .option-stack { align-items: center; }
     .hero-grid { gap: 24px; }
@@ -215,7 +218,7 @@
   <div class="wrap hero-grid">
     <div>
       <p class="label">Rumana Hussain · Fractional COO</p>
-      <h1>Making mission-driven healthtech companies easier to run</h1>
+      <h1>Making <span style="white-space: nowrap;">mission-driven</span> healthtech companies easier to run</h1>
       <p class="lede">Clear goals, useful metrics, and workflows that service teams use, for startups serving people the health system wasn't designed for.</p>
       <p style="margin-bottom: 22px;"><a class="btn btn-primary" href="https://book.rumanaadvisory.com/coo-ops">Book a 30-minute call</a></p>
       <ul class="pills" aria-label="Experience and education">
@@ -289,7 +292,7 @@
       <li>Goals aren't clear down to the care teams.</li>
       <li>Board reporting is a struggle.</li>
       <li>Service teams aren't using the product.</li>
-      <li>A new raise and a growing team.</li>
+      <li>A needed change is stalled for lack of time or clarity.</li>
       <li>Ops leadership is leaving.</li>
     </ul>
   </div>
@@ -311,7 +314,7 @@
       </div>
       <div class="card c-mustard">
         <h3>Compliance in daily operations</h3>
-        <p>Turn policy, compliance and contract requirements into workflows your team can follow and test, from controlled substance processes in clinics to consent and identity checks for an outbound voice AI tool.</p>
+        <p>Turn policy and compliance requirements into daily workflows, from controlled substances in clinics to consent checks for outbound voice AI.</p>
       </div>
       <div class="card c-teal">
         <h3>Messy problems</h3>
@@ -443,7 +446,7 @@
     <div class="section-head">
       <h2>How I work</h2>
     </div>
-    <div class="grid-4">
+    <div class="grid-2">
       <div class="card c-orange">
         <h3>Transparent and collaborative</h3>
         <p>I make goals and performance visible, so everyone can fully engage in problem solving.</p>
