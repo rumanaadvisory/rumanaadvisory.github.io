@@ -107,6 +107,8 @@
   section + section, .quote + section, section + .quote { border-top: 1px solid var(--line); }
   .section-head { max-width: 700px; margin-bottom: 20px; }
   .section-head p { color: var(--ink-soft); }
+  /* Full content width, so the intro line fits on one line */
+  #experience .section-head { max-width: none; }
 
   /* Plain lists */
   .triggers strong { font-weight: 600; color: var(--ink); }
@@ -118,6 +120,12 @@
   }
   .triggers li:nth-child(3n+1) { --c: var(--orange); }
   .triggers li:nth-child(3n+2) { --c: var(--mustard); }
+  /* Good health for all: a smaller section with no bullets */
+  #community { padding: 28px 0; }
+  #community .section-head { margin-bottom: 10px; }
+  #community .triggers { font-size: var(--fs-sm); gap: 4px 40px; }
+  #community .triggers li { padding-left: 0; }
+  #community .triggers li::before { display: none; }
 
   /* Columns of text: no boxes */
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -406,19 +414,24 @@
         <p>Helped set up programs and workflows, and implement care management systems.</p>
       </li>
       <li>
-        <h3>EHR rollout</h3>
-        <p class="label">Alameda Health System</p>
-        <p>Led site operations for 3 FQHC clinics through go-live.</p>
+        <h3>Food as medicine</h3>
+        <p class="label">Meal delivery startup · Alameda Health System</p>
+        <p>Developed a Medi-Cal market entry strategy for medically tailored meals. Set up Food is Medicine group visits for FQHC patients.</p>
       </li>
       <li>
-        <h3>Community health startup</h3>
-        <p class="label">Sparrow Healthcare · Fractional COO</p>
-        <p>Built operating systems, stabilized a care management platform, and helped design and test a voice AI tool with community health workers.</p>
+        <h3>Referral-to-scheduling redesign</h3>
+        <p class="label">Stanford Health Care</p>
+        <p>Co-led a process redesign in the liver transplant clinic that cut the time from referral to scheduling from four weeks to same-day.</p>
       </li>
       <li>
-        <h3>Clinic operations</h3>
-        <p class="label">Stanford Health Care · Interim COO</p>
-        <p>Implemented a Lean operating system with dashboards and daily routines for a $26M clinic system.</p>
+        <h3>Recruitment redesign</h3>
+        <p class="label">Menlo Medical Clinic, Stanford Health Care</p>
+        <p>Cut the vacancy rate from 11% to 4%, with time-to-fill consistently under 30 days and much less use of temp agencies.</p>
+      </li>
+      <li>
+        <h3>COVID vaccine allocation</h3>
+        <p class="label">Blue Shield of California · State of California</p>
+        <p>Worked with the State of California and McKinsey &amp; Co. to design the allocation algorithm for early COVID vaccine distribution.</p>
       </li>
     </ul>
   </div>
@@ -431,12 +444,12 @@
       <p class="small">A special interest of mine: work that promotes good health for people the health system wasn't designed for.</p>
     </div>
     <ul class="triggers">
-      <li><strong>Women's health NGO, Mexico City:</strong> strategy</li>
+      <li><strong>Women's health NGO, Mexico City:</strong> growth strategy</li>
       <li><strong>County health system:</strong> safety-net clinic operations</li>
       <li><strong>Community-based organizations, California:</strong> Medicaid readiness</li>
       <li><strong>Food-as-medicine startup:</strong> California market entry</li>
       <li><strong>Senior housing nonprofit:</strong> SDOH measurement strategy</li>
-      <li><strong>Maternal and child health:</strong> First 5 Sutter County, a doula project</li>
+      <li><strong>Maternal and child health:</strong> First 5 Alameda County, First 5 Sutter County, doula service provider</li>
     </ul>
   </div>
 </section>
